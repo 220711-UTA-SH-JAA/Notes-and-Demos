@@ -62,3 +62,11 @@
 ### 13. What is the purpose of package managers?
 
 ### 14. Name some package managers you learned about
+
+## Day 3:
+
+### Activities:
+
+Morning:
+
+[Practice your git skills](https://learngitbranching.js.org/)
