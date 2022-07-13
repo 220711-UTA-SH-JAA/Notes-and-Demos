@@ -70,3 +70,79 @@
 Morning:
 
 [Practice your git skills](https://learngitbranching.js.org/)
+
+Afternoon:
+
+[Install Git and Java](https://github.com/220711-UTA-SH-JAA/Notes-and-Demos/tree/main/Configuration)
+
+### Questions:
+
+### 1. What are Version Control Systems?
+
+### 2. Why would we use version control systems?
+
+### 3. What is Git?
+
+### 4. What type of version control system is Git?
+
+### 5. What is a repository?
+
+### 6. How would you create a Git repository?
+
+### 7. How does Git keep track of your application history?
+
+### 8. How do you add changes to the staging area?
+
+### 9. How do you make a commit to your Git repository?
+
+### 10. How would you store the changes on your git repository in the cloud?
+
+### 11. What are Git branches?
+
+### 12. How would you create a git branch?
+
+### 13. Why would you create new branches on git?
+
+### 13. How would you switch to a different branch on git?
+
+### 14. How would you push a new branch to Github?
+
+### 15. What are your options when it comes to merging code?
+
+### 16. What is a program?
+
+### 17. Why do we have programming languages?
+
+### 18. What is the difference between a high level and low level programming language?
+
+### 19. Why were high level language created?
+
+### 20. What is Java?
+
+### 21. Why do we use Java?
+
+### 23. What is Object Oriented Programming?
+
+### 24. Why Object Oriented Programming?
+
+### 25. What are the main principles of Object Oriented Programming?
+
+### 22. How do write Java code?
+
+### 23. What is Java code compiled into?
+
+### 24. How do we compile a Java file into a Class file?
+
+### 25. What are the three main tools/packages shipped with Java?
+
+### 26. What is the JDK?
+
+### 27. What are some important features of the JDK?
+
+### 28. What is the Java JRE?
+
+### 29. What are some important features of the JRE?
+
+### 30. What is the JVM?
+
+### 31. Why is does the JVM make Java so Powerful?
