@@ -88,4 +88,82 @@ class Word{
 		size = characters.length;
 	}
 
+
+	Word concatenate(char ...chars){
+
+		//We cant resize the characters array because its an array
+		//We need to make a new array to add the old characters and the new characters
+		//We length of the size of the old character array + length of the size of the new characters
+		char[] newWord = new char[characters.length + chars.length];
+
+		//Loop through every index of the new array
+		for(int i=0; i<newWord.length; i++){
+			if(i<characters.length){
+				newWord[i] = characters[i];
+			} else {
+				newWord[i] = chars[i - characters.length];
+
+			}
+
+		}
+
+		return new Word(newWord);
+		
+	}
+
+	int charAt(int index){
+		if(index > characters.length || index < 0){
+			return -1;
+		}
+
+		return characters[index];
+	}
+
+	boolean contains(Word word){
+
+		//Brute force idea
+		//Get the first char of the word parameter
+		//And loop until we find it
+		//If we find go to the next one and see if we see that in our word otherwise go back to the first index of the given word
+
+		//w = racecar
+		//w.contains(car) return true
+		
+		int countedChars = 0;
+
+		//Looping through the entire characters array of THIS object
+		for(int i=0; i<this.characters.length; i++){
+			//If we match the first character of the work we are looking for do some logic to check the rest
+			if(word.characters[0] == this.characters[i]){
+				System.out.println("input char: " + word.characters[0] + " this char: " + this.characters[i]);
+				//We start at index 1, because we have already matched index 0 of words.characters
+				//Loop through the word we passed in as a parameter
+				countedChars = 1;
+				//We look at each of the characters left in the word and see if they match with THIS word
+				if(i+word.characters.length > this.characters.length){
+					return false;
+				}
+				for(int j=1; j<word.characters.length; j++){
+					if(word.characters[j] == this.characters[i+j]){
+						//If they do, we increment the number of mathces we have seen
+						System.out.println("input char: " + word.characters[j] + " this char: " + this.characters[i+j]);
+						countedChars++;
+					} else {
+						//Other we reset the counter because the character didn't match
+						countedChars = 0;
+						break;
+					}
+				}
+
+				//See if we matched the correct amount of characters
+				if(countedChars == word.characters.length){
+					return true;
+				}
+			}
+
+		}
+		return false;
+
+	}
+
 }

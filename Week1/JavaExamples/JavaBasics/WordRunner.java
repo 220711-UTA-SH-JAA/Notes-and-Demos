@@ -9,6 +9,14 @@ class WordRunner {
 		Word w = new Word('h','e','l','l','o');
 		System.out.println(w.size);
 		System.out.println(w.characters);
+		w = w.concatenate(' ', 'w', 'o', 'r', 'l', 'd');
+		System.out.println(w.characters);
+
+		Word racecar = new Word('r','a','c','e','c','a','r');
+
+		Word ace = new Word('a','r','c');
+
+		System.out.println(racecar.contains(ace));
 
 	}
 

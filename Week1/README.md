@@ -151,6 +151,8 @@ Afternoon:
 
 ### Activities
 
+[Sign up for Hackerrank and complete `Array Sum`](https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true)
+
 ### Questions:
 
 ### 1. What are classes in Java?
