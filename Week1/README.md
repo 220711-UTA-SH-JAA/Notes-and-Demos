@@ -146,3 +146,93 @@ Afternoon:
 ### 30. What is the JVM?
 
 ### 31. Why is does the JVM make Java so Powerful?
+
+## Day 4:
+
+### Activities
+
+### Questions:
+
+### 1. What are classes in Java?
+
+### 2. What are objects in Java?
+
+### 3. Why do we use classes and objects in Java?
+
+### 4. What is a method?
+
+### 5. What is the syntax for creating a method?
+
+### 6. How might you return a value from a method in Java?
+
+### 7. How would you call a method in Java?
+
+### 8. How are parameters passed to methods in Java?
+
+### 9. What is the `main` method in Java?
+
+### 10. What is the syntax for the main method in Java?
+
+### 11. What are arrays in Java?
+
+### 12. Why would you use an array in Java?
+
+### 13. How do you declare an array in Java?
+
+### 14. How would you place an element in an array in Java?
+
+### 15. How are arrays indexed in Java?
+
+### 16. How might you get the number of elements an array can hold in Java?
+
+### 17. Can you resize an array after instantiating it?
+
+### 18. Is it possible to store an array inside of an array?
+
+### 19. What are variables in Java?
+
+### 20. Why do we use variables in Java?
+
+### 21. What is the syntax for creating variables in Java?
+
+### 22. What are the two types of data that can be stored in a variable?
+
+### 23. Name the Primitive data types and their sizes in bits.
+
+### 24. What is casting in regards to primitive datatypes?
+
+### 25. What are the default values assigned to different datatypes in Java?
+
+### 26. What are Wrapper classes?
+
+### 27. Why use wrapper classes?
+
+### 28. What is a constructor?
+
+### 29. How would you instantiate a new object from a class?
+
+### 30. What types of constructors are their in Java?
+
+### 31. Are no argument and default constructors the same?
+
+### 32. What are the different uses of the keyword `this` in Java?
+
+### 33. What are Java operators?
+
+### 34. Name some of the operators you know.
+
+### 35. What are Java control flow statements?
+
+### 36. Name the different loops.
+
+### 37. What is the for loop syntax?
+
+### 38. What is the difference between a while loop and do while loop?
+
+### 39. What is the `continue` keyword, and where can it be used?
+
+### 40. What are the different conditional statemens in Java?
+
+### 41. What is a switch statement?
+
+### 42. What is the `break` keyword, and where can you use it?
