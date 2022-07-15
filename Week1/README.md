@@ -238,3 +238,75 @@ Afternoon:
 ### 41. What is a switch statement?
 
 ### 42. What is the `break` keyword, and where can you use it?
+
+## Day 5:
+
+### Activities:
+
+Create a simple Java command line application called `Calculator`
+- It should take in three arguments:
+    1. A number
+    2. An operator `+`, `-`, `*`, or `/`
+    3. A second number
+- Using any type of loop, loop through the arguments array, and convert the argument to its corresponding datatype using Wrapper classes
+- Using `if` statements, or a `switch` statement, determine what calculator operation the user is attempting
+- Print back to the console the output of the operation
+- You can compile the program with `javac Calculator.java`
+- You should be able to run the program via the command line like so:
+    - `java Calculator 1 + 2`
+    - Output: `The output of the calculation: 3`
+- If you finish early, think about how you might modify the code to prevent parsing errors
+
+### Questions:
+
+### 1. What are Java packages?
+
+### 2. Why do we use Java packages?
+
+### 3. How do you create a Java package?
+
+### 4. Is there any special naming conventions for packages?
+
+### 5. How would you import a class from a package into another class?
+
+### 6. What is SDLC?
+
+### 7. What are the general steps of SDLC?
+
+### 8. What are the two main approaches to SDLC?
+
+### 9. What is Waterfall?
+
+### 10. How does Waterfall work?
+
+### 11. Are their any downsides to adopting Waterfall?
+
+### 12. Are their any advantages to adopting Waterfall?
+
+### 13. What is Agile?
+
+### 14. How does Agile work?
+
+### 15. Are their any downsides to adopting Agile?
+
+### 16. Are their any advatanges to adopting Agile?
+
+### 17. What are some popular implemtnations of Agile?
+
+### 18. What is Scrum?
+
+### 19. Name some Scrum artifacts.
+
+### 20. What is Story Pointing?
+
+### 21. What is the purpose of story pointing?
+
+### 22. What are some ways of teams coming up with points for user stories?
+
+### 23. What is the purpose of the Sprint Planning Meeting
+
+### 24. What is the purpose of the Daily Standup?
+
+### 25. What is the purpose of the Sprint Review?
+
+### 26. What is the purpose of Sprint Retrospective?

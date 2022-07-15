@@ -1,4 +1,6 @@
-class Word{
+package com.revature.word;
+
+public class Word{
 	
 	/*
 	 * Arrays and Array Indexing in Java
@@ -30,9 +32,9 @@ class Word{
 	//char[][] multiArray = [size][size]
 
 	//For our case, we want java to start out us out with an empty word aka an empty array
-	char[] characters;
+	public char[] characters;
 
-	int size;
+	public int size;
 
 	/* Constructors
 	 * Are special methods that allow you to instantiate object types in java
@@ -59,7 +61,7 @@ class Word{
 	 * 	- This will essentially call upon another constructor inside of the class
 	 */
 
-	Word(){
+	public Word(){
 		System.out.println("We called the no args constructor");
 		size=0;
 		characters = new char[0];
@@ -79,7 +81,7 @@ class Word{
 	/* LEGAL VARARGS */
 	//Word(char ..characters)
 	//Word(int number, char... characters)
-	Word(char ...characters){
+	public Word(char ...characters){
 		//This is not neccessary, but it is called the no argument constructor of the Word class
 		this();
 		System.out.println("Inside of the arguments constructor");
@@ -89,7 +91,7 @@ class Word{
 	}
 
 
-	Word concatenate(char ...chars){
+	public Word concatenate(char ...chars){
 
 		//We cant resize the characters array because its an array
 		//We need to make a new array to add the old characters and the new characters
@@ -111,7 +113,7 @@ class Word{
 		
 	}
 
-	int charAt(int index){
+	public int charAt(int index){
 		if(index > characters.length || index < 0){
 			return -1;
 		}
@@ -119,7 +121,7 @@ class Word{
 		return characters[index];
 	}
 
-	boolean contains(Word word){
+	public boolean contains(Word word){
 
 		//Brute force idea
 		//Get the first char of the word parameter
