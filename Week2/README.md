@@ -1,6 +1,6 @@
 # Week Two Questions and Activity Guide
 
-## Day 2:
+## Day 1:
 
 ### Activities:
 
