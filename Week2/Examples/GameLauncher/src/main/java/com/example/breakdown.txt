@@ -1,0 +1,16 @@
+General purpose application than launch "any" game
+
+1. What do we need in our project?
+- Players
+	- Name
+	- Score
+	- Custom players for data needed for other games
+
+- Game
+	- Name
+	- Board
+	- Logic to play the game
+	- Logic to declare a winner
+	
+?Board
+	- Custom board for a game
