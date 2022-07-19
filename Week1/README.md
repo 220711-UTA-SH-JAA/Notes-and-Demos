@@ -146,3 +146,167 @@ Afternoon:
 ### 30. What is the JVM?
 
 ### 31. Why is does the JVM make Java so Powerful?
+
+## Day 4:
+
+### Activities
+
+[Sign up for Hackerrank and complete `Array Sum`](https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true)
+
+### Questions:
+
+### 1. What are classes in Java?
+
+### 2. What are objects in Java?
+
+### 3. Why do we use classes and objects in Java?
+
+### 4. What is a method?
+
+### 5. What is the syntax for creating a method?
+
+### 6. How might you return a value from a method in Java?
+
+### 7. How would you call a method in Java?
+
+### 8. How are parameters passed to methods in Java?
+
+### 9. What is the `main` method in Java?
+
+### 10. What is the syntax for the main method in Java?
+
+### 11. What are arrays in Java?
+
+### 12. Why would you use an array in Java?
+
+### 13. How do you declare an array in Java?
+
+### 14. How would you place an element in an array in Java?
+
+### 15. How are arrays indexed in Java?
+
+### 16. How might you get the number of elements an array can hold in Java?
+
+### 17. Can you resize an array after instantiating it?
+
+### 18. Is it possible to store an array inside of an array?
+
+### 19. What are variables in Java?
+
+### 20. Why do we use variables in Java?
+
+### 21. What is the syntax for creating variables in Java?
+
+### 22. What are the two types of data that can be stored in a variable?
+
+### 23. Name the Primitive data types and their sizes in bits.
+
+### 24. What is casting in regards to primitive datatypes?
+
+### 25. What are the default values assigned to different datatypes in Java?
+
+### 26. What are Wrapper classes?
+
+### 27. Why use wrapper classes?
+
+### 28. What is a constructor?
+
+### 29. How would you instantiate a new object from a class?
+
+### 30. What types of constructors are their in Java?
+
+### 31. Are no argument and default constructors the same?
+
+### 32. What are the different uses of the keyword `this` in Java?
+
+### 33. What are Java operators?
+
+### 34. Name some of the operators you know.
+
+### 35. What are Java control flow statements?
+
+### 36. Name the different loops.
+
+### 37. What is the for loop syntax?
+
+### 38. What is the difference between a while loop and do while loop?
+
+### 39. What is the `continue` keyword, and where can it be used?
+
+### 40. What are the different conditional statemens in Java?
+
+### 41. What is a switch statement?
+
+### 42. What is the `break` keyword, and where can you use it?
+
+## Day 5:
+
+### Activities:
+
+Create a simple Java command line application called `Calculator`
+- It should take in three arguments:
+    1. A number
+    2. An operator `+`, `-`, `*`, or `/`
+    3. A second number
+- Using any type of loop, loop through the arguments array, and convert the argument to its corresponding datatype using Wrapper classes
+- Using `if` statements, or a `switch` statement, determine what calculator operation the user is attempting
+- Print back to the console the output of the operation
+- You can compile the program with `javac Calculator.java`
+- You should be able to run the program via the command line like so:
+    - `java Calculator 1 + 2`
+    - Output: `The output of the calculation: 3`
+- If you finish early, think about how you might modify the code to prevent parsing errors
+
+### Questions:
+
+### 1. What are Java packages?
+
+### 2. Why do we use Java packages?
+
+### 3. How do you create a Java package?
+
+### 4. Is there any special naming conventions for packages?
+
+### 5. How would you import a class from a package into another class?
+
+### 6. What is SDLC?
+
+### 7. What are the general steps of SDLC?
+
+### 8. What are the two main approaches to SDLC?
+
+### 9. What is Waterfall?
+
+### 10. How does Waterfall work?
+
+### 11. Are their any downsides to adopting Waterfall?
+
+### 12. Are their any advantages to adopting Waterfall?
+
+### 13. What is Agile?
+
+### 14. How does Agile work?
+
+### 15. Are their any downsides to adopting Agile?
+
+### 16. Are their any advatanges to adopting Agile?
+
+### 17. What are some popular implemtnations of Agile?
+
+### 18. What is Scrum?
+
+### 19. Name some Scrum artifacts.
+
+### 20. What is Story Pointing?
+
+### 21. What is the purpose of story pointing?
+
+### 22. What are some ways of teams coming up with points for user stories?
+
+### 23. What is the purpose of the Sprint Planning Meeting
+
+### 24. What is the purpose of the Daily Standup?
+
+### 25. What is the purpose of the Sprint Review?
+
+### 26. What is the purpose of Sprint Retrospective?
