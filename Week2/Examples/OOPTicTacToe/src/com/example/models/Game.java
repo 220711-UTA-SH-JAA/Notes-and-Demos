@@ -1,6 +1,23 @@
 package com.example.models;
 
-public class Game {
+/*
+ * Abstraction in Java
+ * - This is a principle where we centralize common characteristics and generalize behaviors into conceptual classes
+ * 
+ * We are going to hide the underlying complexities through a simplified interface
+ * - Hiding how something works, but still allowing users to know what the functions are
+ * 
+ * In Java we will do this with Abstract Classes and Interfaces
+ * 
+ * Java has special interfaces called Marker Interfaces, these work similarly to annotations, and provide metadata to
+ * the compiler, the most common one is Serializable, which tells the compiler an object can be written to a file
+ * 
+ */
+
+//To make an abstract class, we just use the keyword abstract
+//We cannot make a new instance of Game, we must inherit the functionality and instantiate a subclass than inherits game
+//Abstract classes can have both abstract methods and non-abstract methods
+public abstract class Game {
 
 	/* NONACCESS MODIFIERS
 	 * 
@@ -38,13 +55,29 @@ public class Game {
 	 */
 	
 	//final variables are typically denoted by all uppercase, so its easy to tell
-	public static final String NAME = "Tic Tac Toe";
+	public static final String NAME = "General Game";
 	
+	private Board board;
 	
-	public static char[][] board = new char[3][3];
+	private Player[] players;
 	
-	public static void play() {
-		System.out.println("Lets play the game");
+	//The abstract keyword on a method, means we must implement this method on the class that we are inheriting to
+	abstract void calculateWinner();
+	
+	public void setPlayers(Player[] players) {
+		this.players = players;
+	}
+	
+	public Player[] getPlayers() {
+		return players;
+	}
+	
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+	
+	public Board getBoard() {
+		return this.board;
 	}
 	
 }
