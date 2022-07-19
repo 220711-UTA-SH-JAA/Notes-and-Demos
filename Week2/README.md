@@ -141,3 +141,47 @@ Work on the java-core activities
 ### 34. How do you provide logic to an interfaces methods?
 
 ## 35. What is a marker interface?
+
+## Day 3:
+
+### Activities:
+
+Work on the java-core activities
+
+Work on P1
+
+### Questions:
+
+### 1. What are exceptions?
+
+### 2. Explain the exception hierarchy in Java.
+
+### 3. Explain the difference between a Checked and Unchecked exception.
+
+### 4. Give examples of a checked exception.
+
+### 5. Give examples of an unchecked exception.
+
+### 6. What are the different ways of handling exceptions?
+
+### 7. How do you use a try/catch block?
+
+### 8. Can you catch multiple exceptions with a single catch block?
+
+### 9. What is another way of catching multiple exceptions?
+
+### 10. What is the purpose of the finally block?
+
+### 11. Are you allowed to have a try/finally block?
+
+### 12. What about a try or catch by itself?
+
+### 13. What is try with resources?
+
+### 14. How do you use try with resources?
+
+### 15. What is the purpose of the `throws` keyword?
+
+### 16. How do we create a custom exception in Java?
+
+### 17. How do we manually throw an exception in Java?
