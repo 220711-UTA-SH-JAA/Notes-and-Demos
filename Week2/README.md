@@ -185,3 +185,89 @@ Work on P1
 ### 16. How do we create a custom exception in Java?
 
 ### 17. How do we manually throw an exception in Java?
+
+## Day 4:
+
+### Activities:
+
+### Morning: Data structure Team Research Assignment
+
+### Questions:
+
+### 1. What are Generics?
+
+### 2. How do you use Generics?
+
+### 3. Where can you declare Generics?
+
+### 4. What is a data structure?
+
+### 5. Why do we use data structures over arrays?
+
+### 6. What are the types of data structures?
+
+### 7. Name some linear data structures.
+
+### 8. Name some hierarchical data structures.
+
+### 9. What is the Collection API in Java?
+
+### 10. What is the Iterable Interface?
+
+### 11. What is the Iterator Interface?
+
+### 12. How do you get an iterator in Java?
+
+### 13. How do you use an iterator in Java?
+
+### 14. What is an ArrayList?
+
+### 15. How do you use an ArrayList?
+
+### 16. Is there any advantages to using an ArrayList?
+
+### 17. What is a LinkedList?
+
+### 18. How do you use LinkedList?
+
+### 19. Is there any advantages to using a Linked List?
+
+### 20. What is a Vector?
+
+### 21. What is a Stack?
+
+### 22. What is a Queue?
+
+### 23. What is an ArrayDeque?
+
+### 24. How do you use an ArrayDeque?
+
+### 25. What is a Priority Queue?
+
+### 26. What is a Map?
+
+### 27. What is special about a map that the other linear data structures don't have?
+
+### 28. How are some ways you can iterate through a map?
+
+### 29. What is a HashMap?
+
+### 30. How do you use a HashMap?
+
+### 31. What is a TreeMap?
+
+### 32. How do you use a TreeMap?
+
+### 33. What is a HashTable?
+
+### 34. What is the primary differences between the three above map implementations?
+
+### 35. What is the Comparable interface?
+
+### 36. How do you implement/use the Comparable interface?
+
+### 37. What is the Comparator Interface?
+
+### 38. How do you implement/use the Comparator interface?
+
+### 39. What is the difference between `collections`, `Collection` and `Collections`
