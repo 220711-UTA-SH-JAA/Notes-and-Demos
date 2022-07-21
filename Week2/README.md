@@ -192,26 +192,6 @@ Work on P1
 
 ### Morning: Data structure Team Research Assignment
 
-Present/Report on:
-- What is your datastructure?
-- Are there different ways to implement it? If so, what are they?
-- What is your data structure useful for?
-  - Where would want to use it, vs where is it not useful?
-
-Implmentation:
-- What implementation of the datastructure did you get?
-- How did you implement it?
-- What are the most basic methods needed to accces/store/and modify data in your structure
-  - How do you go about adding or deleting elements?
-
-### Breakout room one: ArrayList
-
-### Breakout room two: LinkedList
-
-### Breakout room three: Priority Queue
-
-### Breakout room four: Deque (Doubled Ended Queue)
-
 ### Questions:
 
 ### 1. What are Generics?
@@ -291,3 +271,53 @@ Implmentation:
 ### 38. How do you implement/use the Comparator interface?
 
 ### 39. What is the difference between `collections`, `Collection` and `Collections`
+
+## Day 5:
+
+### Activities:
+
+Work on java-core/p1
+
+### Questions:
+
+### 1. What is Unit Testing?
+
+### 2. What is Test Driven Development?
+
+### 3. Why would you use Test Driven Development?
+
+### 4. How do you accomplish Test Driven Development?
+
+### 5. What is Red/Green testing?
+
+### 6. What is a Unit Test?
+
+### 7. How do we Unit Test in Java?
+
+### 8. What is JUnit?
+
+### 9. What are some of the annotations that come with JUnit?
+
+### 10. How do you write a JUnit test in Java?
+
+### 11. What is Mockito?
+
+### 12. What is a stub in mockito?
+
+### 13. What is a mock in mockito?
+
+### 14. How would you create a mock or stub with mockito?
+
+### 15. How can you spy on an object in Mockito?
+
+### 16. How can we test if a method threw an exception as expected?
+
+### 17. What is the git flow branching strategy?
+
+### 18. What are some of the branches used in the git flow branching strategy?
+
+### 19. What is a merge conflict?
+
+### 20. How do you resolve a merge conflict?
+
+### 21. How can you protect a branch on github?
