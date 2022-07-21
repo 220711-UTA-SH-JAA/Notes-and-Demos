@@ -192,6 +192,26 @@ Work on P1
 
 ### Morning: Data structure Team Research Assignment
 
+Present/Report on:
+- What is your datastructure?
+- Are there different ways to implement it? If so, what are they?
+- What is your data structure useful for?
+  - Where would want to use it, vs where is it not useful?
+
+Implmentation:
+- What implementation of the datastructure did you get?
+- How did you implement it?
+- What are the most basic methods needed to accces/store/and modify data in your structure
+  - How do you go about adding or deleting elements?
+
+### Breakout room one: ArrayList
+
+### Breakout room two: LinkedList
+
+### Breakout room three: Priority Queue
+
+### Breakout room four: Deque (Doubled Ended Queue)
+
 ### Questions:
 
 ### 1. What are Generics?
