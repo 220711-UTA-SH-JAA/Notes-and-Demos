@@ -141,3 +141,183 @@ Work on the java-core activities
 ### 34. How do you provide logic to an interfaces methods?
 
 ## 35. What is a marker interface?
+
+## Day 3:
+
+### Activities:
+
+Work on the java-core activities
+
+Work on P1
+
+### Questions:
+
+### 1. What are exceptions?
+
+### 2. Explain the exception hierarchy in Java.
+
+### 3. Explain the difference between a Checked and Unchecked exception.
+
+### 4. Give examples of a checked exception.
+
+### 5. Give examples of an unchecked exception.
+
+### 6. What are the different ways of handling exceptions?
+
+### 7. How do you use a try/catch block?
+
+### 8. Can you catch multiple exceptions with a single catch block?
+
+### 9. What is another way of catching multiple exceptions?
+
+### 10. What is the purpose of the finally block?
+
+### 11. Are you allowed to have a try/finally block?
+
+### 12. What about a try or catch by itself?
+
+### 13. What is try with resources?
+
+### 14. How do you use try with resources?
+
+### 15. What is the purpose of the `throws` keyword?
+
+### 16. How do we create a custom exception in Java?
+
+### 17. How do we manually throw an exception in Java?
+
+## Day 4:
+
+### Activities:
+
+### Morning: Data structure Team Research Assignment
+
+### Questions:
+
+### 1. What are Generics?
+
+### 2. How do you use Generics?
+
+### 3. Where can you declare Generics?
+
+### 4. What is a data structure?
+
+### 5. Why do we use data structures over arrays?
+
+### 6. What are the types of data structures?
+
+### 7. Name some linear data structures.
+
+### 8. Name some hierarchical data structures.
+
+### 9. What is the Collection API in Java?
+
+### 10. What is the Iterable Interface?
+
+### 11. What is the Iterator Interface?
+
+### 12. How do you get an iterator in Java?
+
+### 13. How do you use an iterator in Java?
+
+### 14. What is an ArrayList?
+
+### 15. How do you use an ArrayList?
+
+### 16. Is there any advantages to using an ArrayList?
+
+### 17. What is a LinkedList?
+
+### 18. How do you use LinkedList?
+
+### 19. Is there any advantages to using a Linked List?
+
+### 20. What is a Vector?
+
+### 21. What is a Stack?
+
+### 22. What is a Queue?
+
+### 23. What is an ArrayDeque?
+
+### 24. How do you use an ArrayDeque?
+
+### 25. What is a Priority Queue?
+
+### 26. What is a Map?
+
+### 27. What is special about a map that the other linear data structures don't have?
+
+### 28. How are some ways you can iterate through a map?
+
+### 29. What is a HashMap?
+
+### 30. How do you use a HashMap?
+
+### 31. What is a TreeMap?
+
+### 32. How do you use a TreeMap?
+
+### 33. What is a HashTable?
+
+### 34. What is the primary differences between the three above map implementations?
+
+### 35. What is the Comparable interface?
+
+### 36. How do you implement/use the Comparable interface?
+
+### 37. What is the Comparator Interface?
+
+### 38. How do you implement/use the Comparator interface?
+
+### 39. What is the difference between `collections`, `Collection` and `Collections`
+
+## Day 5:
+
+### Activities:
+
+Work on java-core/p1
+
+### Questions:
+
+### 1. What is Unit Testing?
+
+### 2. What is Test Driven Development?
+
+### 3. Why would you use Test Driven Development?
+
+### 4. How do you accomplish Test Driven Development?
+
+### 5. What is Red/Green testing?
+
+### 6. What is a Unit Test?
+
+### 7. How do we Unit Test in Java?
+
+### 8. What is JUnit?
+
+### 9. What are some of the annotations that come with JUnit?
+
+### 10. How do you write a JUnit test in Java?
+
+### 11. What is Mockito?
+
+### 12. What is a stub in mockito?
+
+### 13. What is a mock in mockito?
+
+### 14. How would you create a mock or stub with mockito?
+
+### 15. How can you spy on an object in Mockito?
+
+### 16. How can we test if a method threw an exception as expected?
+
+### 17. What is the git flow branching strategy?
+
+### 18. What are some of the branches used in the git flow branching strategy?
+
+### 19. What is a merge conflict?
+
+### 20. How do you resolve a merge conflict?
+
+### 21. How can you protect a branch on github?

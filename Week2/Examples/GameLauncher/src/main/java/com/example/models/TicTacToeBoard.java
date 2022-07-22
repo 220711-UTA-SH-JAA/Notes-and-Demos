@@ -20,6 +20,14 @@ public class TicTacToeBoard implements Board{
 		}
 	}
 	
+	public static Character[][] getBoard() {
+		return board;
+	}
+	
+	public static void setBoard(Character[][] newBoard) {
+		board = newBoard;
+	}
+	
 	public String toString() {
 		StringBuilder builder = new StringBuilder("\n");
 		for(int i=0; i<board.length; i++) {
