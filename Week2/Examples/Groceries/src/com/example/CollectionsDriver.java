@@ -2,11 +2,15 @@ package com.example;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Set;
+import java.util.TreeSet;
 
+import com.example.models.GroceryComparator;
 import com.example.models.GroceryItem;
 
 public class CollectionsDriver {
@@ -224,8 +228,39 @@ public class CollectionsDriver {
 		 * Hashtable: Cannot store null keys OR null values
 		 */
 		
+		//Collections Utility class, has a bunch of utility methods for collections including sort
+		System.out.println("--- Collections.sort using the Comparable --");
+		gAL.add(new GroceryItem("Tide Pods", 18.00, "Snack"));
+		gAL.add(new GroceryItem("Coke Zero", 2.00, "Beverage"));
+		gAL.add(new GroceryItem("Lays", 3.00, "Snack"));
+		gAL.add(new GroceryItem("Ground Beef", 3.99, "Meat"));
 		
+		for(GroceryItem gi : gAL) {
+			System.out.println(gi);
+		}
 		
+		Collections.sort(gAL);
+		
+		System.out.println("After sorting");
+		
+		for(GroceryItem gi : gAL) {
+			System.out.println(gi);
+		}
+		
+		System.out.println("--- TreeSet and Comparator ---");
+		
+		//One thing to note, if our GroceryItem did not either have an Comparable or a Comparator, this would not
+		//know how to sort the objects
+		Set<GroceryItem> gTS = new TreeSet<>(new GroceryComparator());
+		gTS.add(new GroceryItem("Chicken", 23.00, "Meat"));
+		gTS.add(new GroceryItem("Tide Pods", 18.00, "Snack"));
+		gTS.add(new GroceryItem("Coke Zero", 2.00, "Beverage"));
+		gTS.add(new GroceryItem("Lays", 3.00, "Snack"));
+		gTS.add(new GroceryItem("Ground Beef", 3.99, "Meat"));
+		
+		for(GroceryItem gi : gTS) {
+			System.out.println(gi);
+		}
 	}
 
 }
