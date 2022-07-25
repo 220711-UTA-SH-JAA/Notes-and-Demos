@@ -47,3 +47,51 @@ One-on-ones/Project Checkins
 ### 19. What are constraints?
 
 ### 20. Name some constraints.
+
+## Day 2:
+
+### Activities:
+
+Create the database for P1
+
+### Questions:
+
+### 1. What are the 5 sublanguages of SQL?
+
+### 2. What are the keywords of DDL?
+
+### 3. What are the keywords of DCL?
+
+### 4. What are the keywords of DML?
+
+### 5. What are the keywords of DQL?
+
+### 6. What are some other keywords we may use in SQL?
+
+### 7. What is an alias in SQL?
+
+### 8. How do you give a column an alias?
+
+### 9. What is normalization?
+
+### 10. What are the three forms of normalization?
+
+### 11. How do we create relations between tables?
+
+### 12. Why do we create relations between tables?
+
+### 13. What are the four types of multiplicity?
+
+### 14. What do we mean by referential integrity?
+
+### 15. If we want to remove a parent row, how can we be sure referential integrity is not broken?
+
+### 16. What is a view?
+
+### 17. Why would we want to use a view?
+
+### 18. How do you create a view?
+
+### 19. What are the keywords of TCL?
+
+### 20. What are the four properties of a transaction?
