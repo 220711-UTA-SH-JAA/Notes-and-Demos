@@ -1,0 +1,38 @@
+/*	Transaction Control Language
+	- Used to manage transaction within a database
+	- Transaction: is a set of changes made to the database
+	- Syntax/Keywords for TCL:
+		- COMMIT: this will perminently save and DML operations that occured
+		- ROLLBACK: will go back to a previous save point, disgarding any DML operations
+			- You can only ROLLBACK before you make a COMMIT
+		- SAVEPOINT: this create a point to roll back to if something goes wrong
+
+	Propertiers of a transaction in SQL
+	- In SQL every transaction must follow these four rules/properties
+
+	Atomic: All or nothing, the transaction must fully complete or nothing happens at all
+
+	Consistency: The tables and schema shall remain intact after the transaction
+
+	Isolation: Each transaction shall not interfer with one another
+
+	Durability: Data will persist through system crashes and other issues
+
+	These create the ACID properties, be ready to be asked about these in interviews
+*/
+
+BEGIN;
+
+INSERT INTO grocery_list (list_name, customer_fk) values ('Another one', 3);
+
+SELECT * FROM grocery_list gl;
+SELECT * FROM grocery_list gl, item_list_junction ilj WHERE gl.list_id = 4 AND ilj.list = 4;
+
+SAVEPOINT savepoint;
+
+INSERT INTO grocery_list (list_name, customer_fk) values ('This one wont show up', 5);
+
+ROLLBACK TO SAVEPOINT savepoint;
+
+COMMIT;
+

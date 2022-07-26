@@ -1,0 +1,36 @@
+/* when we create a new database, we should always create it from the postgres master db */
+
+/* SQL Sublanguages:
+	- We have 5 sublanguages of SQL
+		- Data Definition Language (DDL)
+		- Data Manipulation Language (DML)
+		- Data Control Language (DCL)
+		- Data Query Language (DQL)
+		- Transaction Control Language (TCL)
+
+	Data Definition Language
+	- Used to define the database/tables themselves
+		- Deal with the creation, alteration, or deletion of tables, users, schemas, or databases
+		- Syntax/Keywords for DDL include:
+			- CREATE: used to create some resource
+			- ALTER: used to make changes to a resource
+			- DROP: used to get rid of a resource
+			- TRUNCATE: similar to DROP, however it removes the data, but keeps the table intact
+*/
+
+/* Data Defition Language for creating a user and db */
+
+CREATE USER dbuser WITH PASSWORD /*You must use single quotes for strings */ 'password';
+
+/* All of our commands need a semi-colon at the end */
+CREATE DATABASE grocerydb;
+
+/* Data Control Language
+	- Used to manage the security and control over our database
+		- Syntax and keywords:
+			- GRANT: grant access/permissions to our database
+			- REVOKE: revoke access/permission to our database		
+*/
+
+/* Give our dbuser access to the database with DCL */
+GRANT ALL PRIVILEGES ON DATABASE grocerydb TO dbuser;

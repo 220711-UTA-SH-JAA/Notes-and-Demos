@@ -1,0 +1,30 @@
+/*
+ * Creating a table with DDL CREATE keyword
+ */
+
+CREATE TABLE groceries (
+	/* All of the columns for our table */
+	id int primary key generated always as identity, /*generated always as identity -> generate the id when we insert */
+	customer_name varchar(128), -- customer_name can be a string up to 128 characters long
+	email varchar(164) unique,
+	password varchar(256),
+	item_name varchar(64),
+	item_type varchar(32),
+	item_price numeric
+);
+
+/* Changing the table with the DDL ALTER keyword */
+
+ALTER TABLE groceries add column /*column name */ item_id /* type */ int;
+
+ALTER TABLE groceries drop column item_id;
+
+/* ALTER also gives us the ability to add constraints and make references */
+
+ALTER TABLE groceries ADD CONSTRAINT email_unique UNIQUE (email);
+
+/* Completely dropping a table with DROP */
+DROP TABLE groceries;
+
+/* Only clear the data but keep the table you can use TRUNCATE */
+TRUNCATE TABLE groceries;

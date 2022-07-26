@@ -1,0 +1,304 @@
+DROP TABLE groceries;
+
+/* 	Lets make our database more normalized and organized
+	
+	Normalization: refers to reducing redundancy of data, and improvind data integrity and consitency
+	- We are going to focus on the first three forms of normalization
+	
+	First Normal Form (1NF):
+	- MUST have a primary
+	- No duplicate values in rows
+	- Atomic Columns (broken up to as little as possible)
+	
+	Second Normal Form (2NF):
+	- MUST be first normal form
+	- All attributes must depend on the primary key
+	
+	Third Normal Form (3NF):
+	- MUST be second normal form
+	- There are no transitive dependencies, data should only relate to the primary key, not some other column
+	  in the table
+	  
+	There is a little saying to help remember these forms:
+	- The key (1NF), the whole key (2NF), and nothing but the key (3NF), so help me Codd
+	
+	We introduce normalization by breaking tables apart, and relating to one another
+	
+	When we create these relationships we are creating multiplicity
+	- The way we create multiplicity is through foreign key relations
+	
+	Foreign Keys:
+	- Makes a relationship between tables
+	- Do NOT need to be unique, but they can be
+	- Can be made out of one or more columns
+		- Composite key
+		
+	Four types of Mulitplicity:
+	1. One-to-many: one entry in the first table can be mapped to many entries in the second table
+		- One customer can have many shopping lists
+		- The foreign key in the first table is allowed to map to multiple entries in the second table
+	2. Many-to-one: the opposite of one to many
+		- Many items can be mapped to a single item type
+	3. Many-to-Many: Many entries in the first table can eb mapped to many entries in the second table
+		- Many items can be mapped to many shopping lists
+		- These will be implemented using junction tables
+	4. One-to-One: a single entry in the first table is mapped to a single entry in the second table
+		- The foreign key is always going to be unique
+	
+	Referential Integrity
+	- Ensure that if we have a record referencing another record, the parent record must ALWAYS exist
+		- We cannot have orphaned records in our database
+	- To get around this, we can use the keyword CASCADE, which will go down the line and get rid of all the items
+		/references to that parent
+	
+	CREATE TABLE groceries (
+	/* All of the columns for our table */
+	id int primary key generated always as identity, /*generated always as identity -> generate the id when we insert */
+	customer_name varchar(128), -- customer_name can be a string up to 128 characters long
+	email varchar(164) unique,
+	password varchar(256),
+	item_name varchar(64),
+	item_type varchar(32),
+	item_price numeric
+	);
+	
+*/
+
+-- Table 1: customer
+-- Table 2: item
+-- Table 3: grocery_list
+-- Table 4: item_type
+
+DROP TABLE customer;
+
+CREATE TABLE customer(
+	customer_id int primary key generated always as identity,
+	first_name varchar(64),
+	last_name varchar(64),
+	username varchar(64) unique,
+	email varchar(164) unique,
+	password varchar(256)
+);
+
+DROP TABLE grocery_list;
+
+CREATE TABLE grocery_list(
+	list_id int primary key generated always as identity,
+	list_name varchar(64),
+	customer_fk int references customer(customer_id) not null
+);
+
+CREATE TABLE item_type(
+	type_id int primary key generated always as identity,
+	type_name varchar(64)
+);
+
+CREATE TABLE item(
+	item_id int primary key generated always as identity,
+	item_name varchar(64),
+	item_type_fk int references item_type(type_id) not null,
+	item_price numeric
+);
+
+CREATE TABLE item_list_junction(
+	list int references grocery_list(list_id) ON DELETE CASCADE,
+	item int references item(item_id) ON DELETE CASCADE,
+	primary key(list, item)
+);
+
+insert into customer (first_name, last_name, username, email, password) values ('Lonee', 'Sorel', 'lsorel0', 'lsorel0@deviantart.com', 'HYESjPd');
+insert into customer (first_name, last_name, username, email, password) values ('Logan', 'Ditt', 'lditt1', 'lditt1@washington.edu', 'kMIiXV');
+insert into customer (first_name, last_name, username, email, password) values ('Kendrick', 'Bryning', 'kbryning2', 'kbryning2@redcross.org', 'bGmvAG');
+insert into customer (first_name, last_name, username, email, password) values ('Lind', 'Barr', 'lbarr3', 'lbarr3@godaddy.com', '9MXvP6q');
+insert into customer (first_name, last_name, username, email, password) values ('Gamaliel', 'Realy', 'grealy4', 'grealy4@scientificamerican.com', 'F1hgO1');
+insert into customer (first_name, last_name, username, email, password) values ('Leeanne', 'Margetson', 'lmargetson5', 'lmargetson5@amazon.co.jp', '4r12Uk3eZ');
+insert into customer (first_name, last_name, username, email, password) values ('Leyla', 'Gippes', 'lgippes6', 'lgippes6@ed.gov', 'ehVNb0M8m1tM');
+insert into customer (first_name, last_name, username, email, password) values ('Amil', 'Lucock', 'alucock7', 'alucock7@cocolog-nifty.com', '55kR2zyAdhDc');
+insert into customer (first_name, last_name, username, email, password) values ('Guy', 'Haydon', 'ghaydon8', 'ghaydon8@posterous.com', 'ivnuqS');
+insert into customer (first_name, last_name, username, email, password) values ('Cordy', 'Andrzejewski', 'candrzejewski9', 'candrzejewski9@home.pl', 'VSqIPFw');
+insert into customer (first_name, last_name, username, email, password) values ('Arlinda', 'Cleiment', 'acleimenta', 'acleimenta@ucoz.ru', 'YFP25ai');
+insert into customer (first_name, last_name, username, email, password) values ('Todd', 'Kobera', 'tkoberab', 'tkoberab@reuters.com', 'MaeDiMaXMo');
+insert into customer (first_name, last_name, username, email, password) values ('Ingrid', 'O''Rowane', 'iorowanec', 'iorowanec@cam.ac.uk', 'lbBzYuzx');
+insert into customer (first_name, last_name, username, email, password) values ('Gay', 'Crebott', 'gcrebottd', 'gcrebottd@umich.edu', 'nBx9afe');
+insert into customer (first_name, last_name, username, email, password) values ('Thorin', 'Kulic', 'tkulice', 'tkulice@infoseek.co.jp', 'PD0xgg');
+insert into customer (first_name, last_name, username, email, password) values ('Kandy', 'Whyatt', 'kwhyattf', 'kwhyattf@webmd.com', 'RQuqrS');
+insert into customer (first_name, last_name, username, email, password) values ('Gal', 'Klemz', 'gklemzg', 'gklemzg@wsj.com', 'DvAH5HQPw');
+insert into customer (first_name, last_name, username, email, password) values ('Leola', 'Jirzik', 'ljirzikh', 'ljirzikh@cnn.com', 'XBZ5eQx7');
+insert into customer (first_name, last_name, username, email, password) values ('Merle', 'Screech', 'mscreechi', 'mscreechi@china.com.cn', 'iILCn08EW');
+insert into customer (first_name, last_name, username, email, password) values ('Brod', 'Deelay', 'bdeelayj', 'bdeelayj@hubpages.com', 'MtN9qoT');
+
+SELECT * FROM customer;
+
+insert into item_type (type_name) values 
+	('produce'), ('dairy'), ('meat'), ('snack'), ('beverage'), ('other');
+	
+SELECT * FROM item_type;
+
+insert into item (item_name, item_type_fk, item_price) values ('Flavouring - Raspberry', 2, 443.88);
+insert into item (item_name, item_type_fk, item_price) values ('Bread - Bagels, Mini', 4, 370.86);
+insert into item (item_name, item_type_fk, item_price) values ('Creme De Menthe Green', 3, 60.59);
+insert into item (item_name, item_type_fk, item_price) values ('Halibut - Whole, Fresh', 2, 274.39);
+insert into item (item_name, item_type_fk, item_price) values ('Truffle Paste', 6, 408.4);
+insert into item (item_name, item_type_fk, item_price) values ('Asparagus - Frozen', 3, 432.46);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Maipo Valle Cabernet', 5, 147.98);
+insert into item (item_name, item_type_fk, item_price) values ('Mountain Dew', 6, 346.51);
+insert into item (item_name, item_type_fk, item_price) values ('Tequila - Sauza Silver', 6, 222.23);
+insert into item (item_name, item_type_fk, item_price) values ('Energy Drink - Franks Pineapple', 1, 185.97);
+insert into item (item_name, item_type_fk, item_price) values ('Napkin - Cocktail,beige 2 - Ply', 2, 211.0);
+insert into item (item_name, item_type_fk, item_price) values ('Bread - Crusty Italian Poly', 2, 361.26);
+insert into item (item_name, item_type_fk, item_price) values ('Ecolab Silver Fusion', 6, 386.56);
+insert into item (item_name, item_type_fk, item_price) values ('Piping - Bags Quizna', 2, 430.53);
+insert into item (item_name, item_type_fk, item_price) values ('Onions - Vidalia', 6, 151.09);
+insert into item (item_name, item_type_fk, item_price) values ('Juice - Cranberry, 341 Ml', 5, 368.06);
+insert into item (item_name, item_type_fk, item_price) values ('Apron', 5, 190.75);
+insert into item (item_name, item_type_fk, item_price) values ('Butcher Twine 4r', 5, 32.99);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Soave Folonari', 1, 151.92);
+insert into item (item_name, item_type_fk, item_price) values ('Pastry - Raisin Muffin - Mini', 6, 343.67);
+insert into item (item_name, item_type_fk, item_price) values ('Clam - Cherrystone', 6, 220.04);
+insert into item (item_name, item_type_fk, item_price) values ('Silicone Paper 16.5x24', 4, 463.99);
+insert into item (item_name, item_type_fk, item_price) values ('Ecolab - Hand Soap Form Antibac', 6, 121.28);
+insert into item (item_name, item_type_fk, item_price) values ('Sword Pick Asst', 4, 397.42);
+insert into item (item_name, item_type_fk, item_price) values ('Pie Box - Cello Window 2.5', 2, 213.84);
+insert into item (item_name, item_type_fk, item_price) values ('Grouper - Fresh', 3, 248.37);
+insert into item (item_name, item_type_fk, item_price) values ('Bread - Rolls, Corn', 1, 451.03);
+insert into item (item_name, item_type_fk, item_price) values ('Irish Cream - Baileys', 2, 384.14);
+insert into item (item_name, item_type_fk, item_price) values ('Sauce - Chili', 1, 364.95);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Riesling Alsace Ac 2001', 1, 320.87);
+insert into item (item_name, item_type_fk, item_price) values ('Cheese - Provolone', 4, 54.34);
+insert into item (item_name, item_type_fk, item_price) values ('Energy Drink', 5, 437.9);
+insert into item (item_name, item_type_fk, item_price) values ('Longos - Lasagna Beef', 1, 43.24);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - White, Chardonnay', 3, 486.37);
+insert into item (item_name, item_type_fk, item_price) values ('Beer - Upper Canada Light', 6, 161.7);
+insert into item (item_name, item_type_fk, item_price) values ('Steampan - Half Size Shallow', 3, 86.86);
+insert into item (item_name, item_type_fk, item_price) values ('Longos - Grilled Chicken With', 6, 243.6);
+insert into item (item_name, item_type_fk, item_price) values ('Juice - Pineapple, 341 Ml', 2, 271.38);
+insert into item (item_name, item_type_fk, item_price) values ('Bread Fig And Almond', 6, 328.27);
+insert into item (item_name, item_type_fk, item_price) values ('Juice - Apple, 341 Ml', 5, 254.29);
+insert into item (item_name, item_type_fk, item_price) values ('Capers - Pickled', 6, 407.0);
+insert into item (item_name, item_type_fk, item_price) values ('Beef - Ground Lean Fresh', 1, 138.53);
+insert into item (item_name, item_type_fk, item_price) values ('Cheese - Valancey', 2, 313.69);
+insert into item (item_name, item_type_fk, item_price) values ('Hand Towel', 4, 95.02);
+insert into item (item_name, item_type_fk, item_price) values ('Cheese - Sheep Milk', 6, 102.89);
+insert into item (item_name, item_type_fk, item_price) values ('Canadian Emmenthal', 4, 289.6);
+insert into item (item_name, item_type_fk, item_price) values ('Carbonated Water - Peach', 5, 407.23);
+insert into item (item_name, item_type_fk, item_price) values ('Smoked Paprika', 6, 67.05);
+insert into item (item_name, item_type_fk, item_price) values ('Carbonated Water - White Grape', 2, 60.49);
+insert into item (item_name, item_type_fk, item_price) values ('Energy Drink - Redbull 355ml', 5, 82.36);
+insert into item (item_name, item_type_fk, item_price) values ('Cup - 4oz Translucent', 2, 434.14);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Chardonnay South', 1, 248.94);
+insert into item (item_name, item_type_fk, item_price) values ('Bread - Sour Sticks With Onion', 5, 217.53);
+insert into item (item_name, item_type_fk, item_price) values ('Juice - Ocean Spray Kiwi', 6, 312.05);
+insert into item (item_name, item_type_fk, item_price) values ('Fish - Halibut, Cold Smoked', 5, 129.33);
+insert into item (item_name, item_type_fk, item_price) values ('Cream - 10%', 6, 414.34);
+insert into item (item_name, item_type_fk, item_price) values ('Schnappes - Peach, Walkers', 4, 327.0);
+insert into item (item_name, item_type_fk, item_price) values ('Lettuce - Treviso', 6, 447.87);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Casillero Deldiablo', 3, 207.8);
+insert into item (item_name, item_type_fk, item_price) values ('Shrimp - Black Tiger 16/20', 4, 72.96);
+insert into item (item_name, item_type_fk, item_price) values ('Versatainer Nc - 9388', 4, 259.27);
+insert into item (item_name, item_type_fk, item_price) values ('Mix - Cappucino Cocktail', 4, 387.45);
+insert into item (item_name, item_type_fk, item_price) values ('Oneshot Automatic Soap System', 6, 71.48);
+insert into item (item_name, item_type_fk, item_price) values ('Soup - Tomato Mush. Florentine', 5, 436.66);
+insert into item (item_name, item_type_fk, item_price) values ('Huck White Towels', 5, 221.36);
+insert into item (item_name, item_type_fk, item_price) values ('Shichimi Togarashi Peppeers', 1, 281.98);
+insert into item (item_name, item_type_fk, item_price) values ('Calaloo', 3, 270.73);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Domaine Boyar Royal', 2, 249.35);
+insert into item (item_name, item_type_fk, item_price) values ('Squash - Sunburst', 4, 230.29);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Baron De Rothschild', 4, 432.63);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Rosso Del Veronese Igt', 1, 326.09);
+insert into item (item_name, item_type_fk, item_price) values ('Nut - Almond, Blanched, Sliced', 6, 355.75);
+insert into item (item_name, item_type_fk, item_price) values ('Turkey - Whole, Fresh', 6, 218.68);
+insert into item (item_name, item_type_fk, item_price) values ('Tea - Herbal Orange Spice', 6, 185.2);
+insert into item (item_name, item_type_fk, item_price) values ('Tea - Apple Green Tea', 1, 41.28);
+insert into item (item_name, item_type_fk, item_price) values ('Tomatoes - Yellow Hot House', 1, 119.23);
+insert into item (item_name, item_type_fk, item_price) values ('Garlic - Peeled', 2, 33.07);
+insert into item (item_name, item_type_fk, item_price) values ('Cheese - La Sauvagine', 6, 419.66);
+insert into item (item_name, item_type_fk, item_price) values ('Tomato - Peeled Italian Canned', 5, 127.14);
+insert into item (item_name, item_type_fk, item_price) values ('Blackberries', 5, 492.03);
+insert into item (item_name, item_type_fk, item_price) values ('Lamb Tenderloin Nz Fr', 4, 297.03);
+insert into item (item_name, item_type_fk, item_price) values ('Pumpkin - Seed', 5, 492.68);
+insert into item (item_name, item_type_fk, item_price) values ('Carbonated Water - Lemon Lime', 1, 177.1);
+insert into item (item_name, item_type_fk, item_price) values ('Wine - Vouvray Cuvee Domaine', 3, 347.34);
+insert into item (item_name, item_type_fk, item_price) values ('Appetizer - Shrimp Puff', 3, 52.36);
+insert into item (item_name, item_type_fk, item_price) values ('Cake - Lemon Chiffon', 2, 63.23);
+insert into item (item_name, item_type_fk, item_price) values ('Pork - Bacon, Double Smoked', 4, 87.83);
+insert into item (item_name, item_type_fk, item_price) values ('Bagel - 12 Grain Preslice', 3, 465.15);
+insert into item (item_name, item_type_fk, item_price) values ('Pasta - Orecchiette', 6, 457.99);
+insert into item (item_name, item_type_fk, item_price) values ('Tomato - Plum With Basil', 5, 344.61);
+insert into item (item_name, item_type_fk, item_price) values ('Steampan - Half Size Shallow', 3, 310.79);
+insert into item (item_name, item_type_fk, item_price) values ('Cookies Almond Hazelnut', 5, 130.43);
+insert into item (item_name, item_type_fk, item_price) values ('Split Peas - Green, Dry', 4, 259.07);
+insert into item (item_name, item_type_fk, item_price) values ('Brandy Apricot', 4, 255.33);
+insert into item (item_name, item_type_fk, item_price) values ('Juice - Clam, 46 Oz', 4, 140.11);
+insert into item (item_name, item_type_fk, item_price) values ('Lettuce - Curly Endive', 5, 58.39);
+insert into item (item_name, item_type_fk, item_price) values ('Skirt - 24 Foot', 2, 86.31);
+insert into item (item_name, item_type_fk, item_price) values ('Chocolate Bar - Coffee Crisp', 4, 333.11);
+insert into item (item_name, item_type_fk, item_price) values ('Sugar Thermometer', 2, 412.67);
+insert into item (item_name, item_type_fk, item_price) values ('Sugar - Brown, Individual', 2, 69.99);
+
+SELECT * FROM item;
+
+INSERT INTO customer (first_name, last_name, username, email, password)
+values ('Ethan', 'McGill', 'elmcgill', 'ethan@mail.com', 'password');
+
+SELECT * FROM grocery_list;
+
+INSERT INTO grocery_list (list_name, customer_fk) 
+values ('Ethans boujee groceries from whole foods sponsored by freshly', 21);
+
+INSERT INTO grocery_list (list_name, customer_fk) 
+values ('Ethan spent all his money on that cocktail', 21);
+
+INSERT INTO grocery_list (list_name, customer_fk) 
+values ('A random list', 1);
+
+INSERT INTO item_list_junction values 
+(2, 3), (2, 7), (2, 8), (2,9), (2, 16), (2, 19), (2, 28), (2, 30), (2, 32), (2, 34), (2, 35),
+(2, 40), (2, 47), (2, 50), (2,52), (2, 53), (2,59);
+
+INSERT INTO item_list_junction values
+(3, 8), (3, 31), (3, 42), (3, 48), (3, 50), (3, 55), (3, 77),
+(3, 83), (3, 85);
+
+INSERT INTO item_list_junction values
+(4, 8), (4, 31),(4, 83), (4, 85);
+
+SELECT * FROM customer, item, item_type, grocery_list, item_list_junction;
+
+-- Lets only return Ethan and his lists
+SELECT * from customer c, grocery_list gl where c.customer_id = 21;
+
+-- Lets filter it more
+SELECT c.first_name, c.last_name, gl.list_name, i.item_name
+FROM customer c, grocery_list gl, item i, item_list_junction ilj
+WHERE c.customer_id = 21 AND c.customer_id = gl.customer_fk AND i.item_id = ilj.item AND ilj.list = gl.list_id;
+
+SELECT c.first_name, c.last_name, gl.list_name, i.item_name, i.item_price
+FROM customer c, grocery_list gl, item i, item_list_junction ilj
+WHERE c.customer_id = 21 AND c.customer_id = gl.customer_fk AND i.item_id = ilj.item AND ilj.list = gl.list_id
+ORDER BY i.item_price DESC;
+
+SELECT * FROM grocery_list gl WHERE gl.list_id = 3;
+
+SELECT * FROM item_list_junction ilj WHERE ilj.list = 3;
+
+-- Lets try to delete a grocery_list and see what happens
+DELETE FROM grocery_list WHERE list_id = 3;
+
+SELECT * FROM item_list_junction;
+
+DELETE FROM grocery_list WHERE list_id = 3;
+
+/* View: Virtual tables that are created by DQL statements
+   - Gives us access to some, but not all of the data in a table
+   - Hide the complexity of the database from other users
+   - Allow users to query denormalized tables
+   - Changes to the underlying table are reflected automatically in the view
+*/
+
+CREATE VIEW denormalized_lists as
+SELECT c.first_name, c.last_name, gl.list_name, i.item_name, i.item_price
+FROM customer c, grocery_list gl, item i, item_list_junction ilj
+WHERE c.customer_id = gl.customer_fk AND i.item_id = ilj.item AND ilj.list = gl.list_id
+ORDER BY i.item_price DESC;
+
+SELECT * FROM denormalized_lists;

@@ -1,0 +1,89 @@
+/* Data Manipulation Language
+	- Used to change the data inside of the database/table
+	- Often referred to as the CRUD operations (CREATE, READ, UPDATE, DELETE)
+		- This is theoretical minimum operations you need for you tables
+	- Syntax/Keywords for DML
+		- INSERT: used to add data to our table aka CREATE
+		- SELECT: used to retrieve data from our table aka READ
+		- UPDATE: used to update data in our table
+		- DELETE: used to delted data from our table
+	
+	Data Query Language
+	- This sub-language is often debated, however it exists in Postgres
+	- The debate itself is that should it be its language or part of DML
+	- Syntax/Keywords
+		- SELECT: specifically paired with the WHERE keyword to specific specific records
+*/
+
+/* Most basic DML creating table entries with INSERT */
+
+insert into groceries (customer_name, email, password, item_name, item_type, item_price) values
+	('Ethan McGill', 'ethan@email.com', 'password', 'hot dogs', 'meat', 2.99);
+	
+/* insert multiple entries at once */
+insert into groceries (customer_name, email, password, item_name, item_type, item_price) values
+	('Ethan McGill', 'ethan2@email.com', 'password', 'buns', 'bread', 1.99),
+	('Ethan McGill', 'ethan3@email.com', 'password', 'ketchup', 'sauce', 1.99),
+	('Ethan McGill', 'ethan4@email.com', 'password', 'mustard', 'sauce', 1.99),
+	('Ethan McGill', 'ethan5@email.com', 'password', 'chips', 'snack', 3.99),
+	('Ethan McGill', 'ethan6@email.com', 'password', 'chip dip', 'sauce', 1.99),
+	('Ethan McGill', 'ethan7@email.com', 'password', 'brews', 'drink', 12.99);
+	
+/* Very basic DML SELECT statement */
+-- Selects all data from the table
+SELECT * FROM groceries;
+
+-- Deletes all the data from the table with the DELETE keyword from DML
+DELETE * FROM groceries;
+
+/* UPDATING will come after lunch after we look at DQL queries */
+
+/* Some other notible keywords you may see when querying a database are:
+ * - WHERE: used to narrow down the results of the query
+ * - ORDER BY: used to sort/order data by a specific column
+ * - GROUP BY: used in conjunction with aggregate functions
+ * - HAVING: similar to WHERE but also typically used with aggregate functions
+ */
+
+insert into groceries (customer_name, email, password, item_name, item_type, item_price) values
+	('Pablo', 'pablo@email1.com', 'password', 'gummy worms', 'candy', 1.99),
+	('Erika', 'erika@email1.com', 'password', 'pepsi', 'drink', 2.50),
+	('Gordon', 'gordon@email1.com', 'password', 'coke', 'drink', 2.50);
+
+SELECT * FROM groceries WHERE customer_name = 'Ethan McGill';
+
+SELECT * FROM groceries WHERE customer_name != 'Ethan McGill';
+
+SELECT * FROM groceries WHERE customer_name = 'Ethan McGill' AND item_type = 'sauce';
+
+/* The LIKE keyword can be used with wildcards to match things that are similar
+ *  '%' wildcard will match 0 or more chacters
+ *  '_' wildcard will match exactly one character
+ */
+
+SELECT * FROM groceries WHERE customer_name LIKE 'E%';
+
+/* Order the price of the drinks from lowest to highest */
+SELECT * FROM groceries WHERE item_type = 'drink' ORDER BY item_price;
+
+/* Order the price of the drinkes are highest to lowest */
+SELECT * FROM groceries WHERE item_type = 'drink' ORDER BY item_price DESC;
+
+/* Aliases: allows you to give a column or table a temporary name when querying
+	- These are often used to make the column names of result sets easier to read
+	- We can use the as keyword to specify a alias
+*/
+
+-- You don't have to select the entire table, you can choose to select specific columns instead
+SELECT item_name AS Drink, item_price as Price
+FROM groceries 
+WHERE item_type = 'drink'
+ORDER BY item_price DESC;
+
+/* Update specific columns with the UPDATE keyword */
+/* Typically what you will see with update, is that you will specify to update a specific item by its id */
+UPDATE groceries SET item_price = '3.99' WHERE item_name = 'hot dogs';
+
+
+/* Delete specific rows from the table with the DELETE keyword */
+DELETE from groceries WHERE item_price > 4.99;
