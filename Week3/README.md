@@ -95,3 +95,41 @@ Create the database for P1
 ### 19. What are the keywords of TCL?
 
 ### 20. What are the four properties of a transaction?
+
+## Day 3:
+
+### Activities:
+
+Chinook-Challenge
+
+### Questions:
+
+### 1. What are joins?
+
+### 2. Why do we need joins?
+
+### 3. What are the different types of joins?
+
+### 4. What are subqueries?
+
+### 5. How do you create a sub query?
+
+### 6. What are set operations?
+
+### 7. What are the different set operations we can use?
+
+### 8. What is the difference between set operations and joins?
+
+### 9. What are scalar functions?
+
+### 10. Name some scalar functions.
+
+### 11. What are aggregate functions?
+
+### 12. What are indexes?
+
+### 13. Why would we create an index?
+
+### 14. What are some of the types of indexes?
+
+### 15. How would you create an index on a column in a table?
