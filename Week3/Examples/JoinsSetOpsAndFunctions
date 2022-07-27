@@ -1,0 +1,278 @@
+/*	Joins and Set Operations
+	Joins are used to connect and gain information from multiple tables at the same time.
+	These tables are joined on whats called the join predicate
+
+	There are several different types of joines
+	
+	INNER JOIN
+	- Used to return values that only exist in both tables
+
+	LEFT JOIN
+	- Used to return ALLL the values in the first/left table, and only the match values in the second/right table
+
+	RIGHT JOIN
+	- Opposite of left join
+	- Return ALL the values of the right/second table, and only the matching values in the left/first table
+
+	FULL (OUTER) JOIN
+	- Combination of left and right join
+	- Returns all the results in both tables reguardless of whether or not they match
+
+	SELF JOIN
+	- Perform an INNER JOIN returns the matching columns in the same table
+	- Represent hiearchies inside of tables
+
+	CROSS JOIN
+	- Return the cartesian product of two tables
+*/
+
+CREATE TABLE stores(
+	store_id int primary key,
+	store_city varchar(20),
+	store_state varchar(20)
+);
+
+DROP TABLE suppliers;
+
+CREATE TABLE suppliers(
+	supplier_id int primary key,
+	supplier_city varchar(64),
+	supplier_state varchar(64),
+	product_type varchar(64),
+	store_id int references stores(store_id)
+);
+
+insert into stores (store_id, store_city, store_state) values (1, 'Montgomery', 'Alabama');
+insert into stores (store_id, store_city, store_state) values (2, 'Arlington', 'Texas');
+insert into stores (store_id, store_city, store_state) values (3, 'Topeka', 'Kansas');
+insert into stores (store_id, store_city, store_state) values (4, 'Lincoln', 'Nebraska');
+insert into stores (store_id, store_city, store_state) values (5, 'Orlando', 'Florida');
+insert into stores (store_id, store_city, store_state) values (6, 'Pittsburgh', 'Pennsylvania');
+insert into stores (store_id, store_city, store_state) values (7, 'Louisville', 'Kentucky');
+insert into stores (store_id, store_city, store_state) values (8, 'Pensacola', 'Florida');
+insert into stores (store_id, store_city, store_state) values (9, 'Fort Wayne', 'Indiana');
+insert into stores (store_id, store_city, store_state) values (10, 'Spokane', 'Washington');
+insert into stores (store_id, store_city, store_state) values (11, 'Brooklyn', 'New York');
+insert into stores (store_id, store_city, store_state) values (12, 'Indianapolis', 'Indiana');
+insert into stores (store_id, store_city, store_state) values (13, 'Newark', 'New Jersey');
+insert into stores (store_id, store_city, store_state) values (14, 'Denver', 'Colorado');
+insert into stores (store_id, store_city, store_state) values (15, 'Fairbanks', 'Alaska');
+insert into stores (store_id, store_city, store_state) values (16, 'Reno', 'Nevada');
+insert into stores (store_id, store_city, store_state) values (17, 'Wichita', 'Kansas');
+insert into stores (store_id, store_city, store_state) values (18, 'Portland', 'Maine');
+insert into stores (store_id, store_city, store_state) values (19, 'Abilene', 'Texas');
+insert into stores (store_id, store_city, store_state) values (20, 'New York City', 'New York');
+insert into stores (store_id, store_city, store_state) values (21, 'Springfield', 'Ohio');
+insert into stores (store_id, store_city, store_state) values (22, 'Albany', 'New York');
+insert into stores (store_id, store_city, store_state) values (23, 'Wichita', 'Kansas');
+insert into stores (store_id, store_city, store_state) values (24, 'Trenton', 'New Jersey');
+insert into stores (store_id, store_city, store_state) values (25, 'Bradenton', 'Florida');
+
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (1, 'Albany', 'New York', 'Tabasco Sauce, 2 Oz', 24);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (2, 'Hollywood', 'Florida', 'Wine - Red, Cooking', 14);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (3, 'Richmond', 'California', 'Drambuie', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (4, 'Tucson', 'Arizona', 'Lamb - Shoulder, Boneless', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (5, 'Los Angeles', 'California', 'Wine - Cahors Ac 2000, Clos', 25);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (6, 'Birmingham', 'Alabama', 'Island Oasis - Lemonade', 3);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (7, 'Duluth', 'Minnesota', 'Anchovy Paste - 56 G Tube', 7);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (8, 'Houston', 'Texas', 'Potatoes - Parissienne', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (9, 'Las Vegas', 'Nevada', 'Dr. Pepper - 355ml', 11);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (10, 'El Paso', 'Texas', 'Chocolate - Dark Callets', 18);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (11, 'Amarillo', 'Texas', 'Bread - Kimel Stick Poly', 6);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (12, 'Colorado Springs', 'Colorado', 'Fib N9 - Prague Powder', 19);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (13, 'Dallas', 'Texas', 'Rice - Aborio', 16);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (14, 'Youngstown', 'Ohio', 'Ham - Proscuitto', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (15, 'Troy', 'Michigan', 'Soup - Tomato Mush. Florentine', 22);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (16, 'Orlando', 'Florida', 'Pork - Back Ribs', 15);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (17, 'Los Angeles', 'California', 'Jameson - Irish Whiskey', 16);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (18, 'Wichita', 'Kansas', 'Bread Base - Toscano', 24);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (19, 'Suffolk', 'Virginia', 'Oil - Food, Lacquer Spray', 8);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (20, 'Springfield', 'Massachusetts', 'Coffee - Hazelnut Cream', 23);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (21, 'Philadelphia', 'Pennsylvania', 'Muffin Mix - Oatmeal', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (22, 'Vancouver', 'Washington', 'Wine - Red, Pinot Noir, Chateau', 6);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (23, 'Wichita', 'Kansas', 'Tuna - Fresh', 6);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (24, 'Houston', 'Texas', 'Bread - Multigrain Oval', 23);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (25, 'Pompano Beach', 'Florida', 'Pork - Tenderloin, Fresh', 3);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (26, 'Amarillo', 'Texas', 'Tea Leaves - Oolong', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (27, 'Philadelphia', 'Pennsylvania', 'Cucumber - Pickling Ontario', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (28, 'Winston Salem', 'North Carolina', 'Cake - Pancake', 4);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (29, 'Dayton', 'Ohio', 'Pork Ham Prager', 2);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (30, 'Wilkes Barre', 'Pennsylvania', 'Lettuce - Green Leaf', 16);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (31, 'Washington', 'District of Columbia', 'Tamarind Paste', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (32, 'Montgomery', 'Alabama', 'Capon - Whole', 8);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (33, 'Washington', 'District of Columbia', 'Rye Special Old', 19);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (34, 'Akron', 'Ohio', 'Basil - Primerba, Paste', 5);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (35, 'Tacoma', 'Washington', 'Artichoke - Hearts, Canned', 22);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (36, 'Norwalk', 'Connecticut', 'Poppy Seed', 3);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (37, 'Lima', 'Ohio', 'Chicken - Base, Ultimate', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (38, 'Santa Rosa', 'California', 'Hummus - Spread', 3);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (39, 'Washington', 'District of Columbia', 'Wine - Zinfandel Rosenblum', 4);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (40, 'San Diego', 'California', 'Berry Brulee', 11);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (41, 'Fullerton', 'California', 'Bread - Burger', 22);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (42, 'Spokane', 'Washington', 'Wine - Vidal Icewine Magnotta', 8);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (43, 'Jamaica', 'New York', 'Bread Crumbs - Japanese Style', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (44, 'Fresno', 'California', 'Chicken - Breast, 5 - 7 Oz', 23);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (45, 'Spokane', 'Washington', 'Grapes - Black', 13);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (46, 'Lakeland', 'Florida', 'Truffle Cups - White Paper', 9);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (47, 'Riverside', 'California', 'Calypso - Pineapple Passion', 3);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (48, 'Austin', 'Texas', 'Soup - Campbells Mushroom', 16);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (49, 'Young America', 'Minnesota', 'Lettuce - Boston Bib', null);
+insert into suppliers (supplier_id, supplier_city, supplier_state, product_type, store_id) values (50, 'Newport News', 'Virginia', 'Yoghurt Tubes', 17);
+
+/* Lets actually look at some joins */
+
+-- INNER JOIN or JOIN
+-- ONLY returns the stores which have a supplier
+select s.store_id, supplier_id, product_type from stores s
+join suppliers su on s.store_id = su.store_id
+order by s.store_id;
+
+-- LEFT JOIN (LEFT OUTER JOIN)
+-- Returning all the values from the stores table, and the matching columns from the supplier table
+select s.store_id, su.supplier_id, su.product_type from stores s
+left join suppliers su on s.store_id = su.store_id
+order by s.store_id;
+
+-- RIGHT JOIN (RIGHT OUTER JOIN)
+-- Returning all the values from the suppliers table, and any matching columns from the stores table
+select s.store_id, su.supplier_id, su.product_type from stores s
+right join suppliers su on s.store_id = su.store_id
+order by su.supplier_id;
+
+/*	NATURAL JOIN
+	NATURAL is a keyword which is used in addition to a join delcaration
+	- NATURAL removes the need for a join predicate and simply joins the tables by the same column names
+*/
+
+-- Instead of using the on keyword and specifying the column to join on
+-- Natural will look at our two tables and see that they share a common store_id column and join on that
+select s.store_id, su.supplier_id, su.product_type from stores s
+natural left join suppliers su
+order by store_id;
+
+select s.store_id, su.supplier_id, su.product_type from stores s
+natural join suppliers su
+order by s.store_id;
+
+/* Subqueries
+ * Are queries held within another query
+ * - Useful for combining queries to minimize change required by the developer or analyst
+ * - Can go anywhere in the SELECT FROM or WHERE
+ * - Must be contained within paranthesis
+ * - If we use subqueries with the WHERE clause, we must give the result an alias
+ * - Can also be used with DML (INSERT, SELECT, UPDATE, DELETE)
+ * - Ways to take the output of one query and query some more
+ */
+
+select store_id from stores where store_state = 'New York';
+
+-- Get the suppliers for stores in New Yorl
+-- Use a sub query for this
+select * from suppliers
+where store_id in
+	(select store_id from stores where store_state = 'Kansas');
+
+select * from suppliers
+where store_id in
+	(select store_id from stores where store_city = 'Wichita');
+
+/* 	Set Operators
+	
+	Aggregate data together in ways different from joins
+	- Used to combine multiple columns of result set data (results of a query)
+	- Sets being operated on need to have the same number of columns selected and those columns must contain
+		similar data
+	
+	Different SET OPERATORS
+	- UNION: combine the columns of data "vertically", take all the data from the first select and combine
+		it with all the data from the second select
+	- UNTION ALL: Do the same thing as UNION, except it allows duplicated data
+	- INTERSECT: contain the intersection of the two selects. It will only return a column with values that both
+		selects share
+	- EXCEPT: Sometimes called MINUS, return the data from the first select and removes any columns
+		that are also in the other select
+		- All data from the first select, minus the data that is shared from the second
+*/
+
+-- UNION ignores duplicates, so there were less than 75 entries
+select store_city as city from stores;
+select supplier_city as city from suppliers;
+
+select store_city as city from stores
+union
+select supplier_city from suppliers
+order by city;
+
+-- UNION ALL should have duplicate cities resulting in 75 entries
+select store_city as city from stores
+union all
+select supplier_city from suppliers
+order by city;
+
+-- INTERSECT the cities which have a supplier and a store in them
+select store_city as city from stores
+intersect
+select supplier_city from suppliers
+order by city;
+
+-- EXCEPT cities which have a supplier BUT NOT a store
+select supplier_city as city_except from suppliers
+except
+select store_city from stores
+order by city_except;
+
+/* 	Differences between JOIN and UNION
+	Joins and Unions seem to be very similar but are different in one cardinal way
+	- Joins are going to combine data in a "horizontal" way
+		- When two tables are joined, the data is compiled so that columns are placed next to each other in
+			a horizontal
+	- Unions are going to combine data in a "vertical" way
+		- When the two selections are combined with union (or any other set operator) the results are stacked on
+			top of each other inside of a single column
+		- This makes it look more veritical compared to a join
+*/
+
+/* 	Scalar and Aggregate functions
+	
+	Scalar Functions: are function postgres/almost all sql languages that take in a single value, and operate on it
+	These functions can be used with SELECT clause or the WHERE clause
+	- LENGTH(string(varchar) return the length of the string
+	- UPPER(varchar) return the string as all uppercase
+	- LOWER(varchar) return the string as all lowercase
+	- ABS(number) return the absolute value
+	- CEILING(number) return the number rounded up
+	- FLOOR(number) returns the number rounded down
+	
+	These operate on a single value and transform them into something slightly different
+	
+	Aggregate Functions: take in an entire column of data, and combine them/aggregate them inot a single column/value
+	These functions once again can be used with SELECT clause and cannot be used with the WHERE clause
+	
+	If you are selecting more than one column with the use of an aggregate you must use the group by keyword
+	so sql knows how to group your return
+	
+	You can also use the HAVING keyword with an aggregate function instead of WHERE
+	- MAX(column) return the max value of all the columns from the selected rows
+	- MIN(column) return the min value of all the columns from the selected rows
+	- AVG(column) return the average of all the columns from the selected rows
+	- SUM(column) return the sum of all the numbers in the column from the selected rows
+	- COUNT(column) return the number of selected columns
+	
+*/
+
+SELECT LOWER(store_city) as city, UPPER(store_state) from stores;
+
+SELECT * from stores WHERE LOWER(store_city) = 'arlington';
+
+-- Returns the number of suppliers we have
+SELECT COUNT(*) from suppliers;
+
+-- Returns the number of suppliers without a store
+select(COUNT(*)*100.0/50) from suppliers where store_id is null;
+
+select(COUNT(*) * 100/ (SELECT count(*) from suppliers)) as suppliers_missing from suppliers
+where store_id is null;
+
+-- Count the number of stores and suppliers that are mapped to one another
+select COUNT(*) from (select s.store_id, supplier_id from stores s natural join suppliers) as some_alias;
+
