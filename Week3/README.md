@@ -133,3 +133,59 @@ Chinook-Challenge
 ### 14. What are some of the types of indexes?
 
 ### 15. How would you create an index on a column in a table?
+
+## Day 4
+
+### Activities:
+
+Connect database to your Java project
+
+### Questions:
+
+### 1. What is Maven?
+
+### 2. What are the Maven project coordinates?
+
+### 3. What is the Project Object Model?
+
+### 4. What is the Maven Repositories?
+
+### 5. What are the Maven Build life cycles?
+
+### 6. How do you create a Maven project?
+
+### 7. How do you include dependencies in a Maven project?
+
+### 8. What is JDBC?
+
+### 9. What are the classes and interfaces of JDBC?
+
+### 10. What is the purpose of the DriverManager class?
+
+### 11. What is the purpose of the DataSource interface?
+
+### 12. What is the purpose of the Connection Interface?
+
+### 13. How do we obtain a Connection?
+
+### 14. What is an SQLException?
+
+### 15. What is a Statement?
+
+### 16. How do you create a Statement?
+
+### 17. How do you run a statement?
+
+### 18. What is a PreparedStatement?
+
+### 19. Why would you use a PreparedStatement instead of a Statement?
+
+### 20. How do you run a PreparedStatement?
+
+### 23. What is the ResultSet?
+
+### 24. How do you get a ResultSet?
+
+### 25. What is needed to create a connection?
+
+### 26. How do you obtain the objects from the result set?

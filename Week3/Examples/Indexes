@@ -1,0 +1,36 @@
+/* 	Indexes: used to speed up the look up of rows in a database
+	- created on individual table columns which you expect to look up often
+	- primary keys a automatically given indexes
+
+	When an index is created on a database column, a separate data structure is created in the database, typically
+		some type of balanced tree which stores references to the actual records in the table
+
+	Speeds up retrieval, at the cost of speed to insert into the table
+
+	Only create an index/extra indexes, when you anticipate that you will be searching for a specific column
+		very often
+
+	Types of indexes:
+	There are many types of indexes, however they are split into 2 main categories
+	- Clustered
+	- Non-clustered
+
+	Clustered Indexes: alter the order in which the records are physically stoed on the disk, only one of these
+		are allowed per table
+
+	Non-clustered Indexes: specify a logical ordering of rows, but not alter the physical ordering of the table
+		Multiple per table are allowed
+
+	Different indexes:
+	- Bitmap
+	- Dense
+	- Sparse
+	- Reverse
+	- Primary
+	- Secondary
+
+	The simple syntax CREATE INDEX ON table_name (column)
+
+*/
+
+CREATE INDEX ON customer (username);
