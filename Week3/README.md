@@ -189,3 +189,37 @@ Connect database to your Java project
 ### 25. What is needed to create a connection?
 
 ### 26. How do you obtain the objects from the result set?
+
+## Day 5:
+
+### Activities:
+
+Work on P1
+
+### Questions:
+
+### 1. What is PL/SQL?
+
+### 2. Why is PL/SQL a thing?
+
+### 3. How do you utilize PL/SLQ?
+
+### 4. What are stored procedures?
+
+### 5. How do you write a stored procedure?
+
+### 6. How do you run a stored procedure?
+
+### 7. What is a function?
+
+### 8. How do you write a function?
+
+### 9. How do you run a stored procedure?
+
+### 10. What is a CallableStatement?
+
+### 11. How do you use a CallableStatement?
+
+### 12. What is the DAO design pattern?
+
+### 13. Why do we want to use properties files or environment variables to hide our database credentials?
