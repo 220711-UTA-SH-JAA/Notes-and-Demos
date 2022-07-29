@@ -42,6 +42,8 @@ CREATE TABLE item(
 
 -- If we delete a grocery list it should remove all entries for that list in the item_list_junction
 -- If we delete an item, it should remove all entries for that item in the item_list_junction
+DROP TABLE item_list_junction;
+
 CREATE TABLE item_list_junction(
 	list int references grocery_list(list_id) ON DELETE CASCADE,
 	item int references item(item_id) ON DELETE CASCADE,

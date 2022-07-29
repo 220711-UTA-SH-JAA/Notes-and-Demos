@@ -145,3 +145,14 @@ $$ language 'plpgsql';
 
 SELECT * FROM get_number_of_items('Ethans Kroger List');
 
+CREATE OR REPLACE FUNCTION get_cost_of_list(l_id int)
+returns int as $$
+declare list_cost numeric;
+BEGIN
+	SELECT INTO list_cost SUM(i.item_price) from item i, item_list_junction ilj
+	where i.item_id = ilj.item and ilj.list = l_id;
+	return list_cost;
+END
+$$ language 'plpgsql';
+
+SELECT * FROM get_cost_of_list(1);
