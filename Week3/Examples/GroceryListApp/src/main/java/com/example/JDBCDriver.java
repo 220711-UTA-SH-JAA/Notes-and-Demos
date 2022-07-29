@@ -5,12 +5,16 @@ import java.util.Scanner;
 
 import com.example.exceptions.CustomerDoesNotExistException;
 import com.example.models.Customer;
+import com.example.models.GroceryList;
 import com.example.models.Item;
 import com.example.repository.CustomerDao;
 import com.example.repository.CustomerDaoJDBC;
+import com.example.repository.GroceryListDao;
+import com.example.repository.GroceryListDaoJDBC;
 import com.example.repository.ItemDao;
 import com.example.repository.ItemDaoJDBC;
 import com.example.services.CustomerService;
+import com.example.services.GroceryListService;
 import com.example.services.ItemService;
 import com.example.utils.JDBCConnectionUtil;
 
@@ -49,6 +53,9 @@ public class JDBCDriver {
 	private static CustomerService customerService = new CustomerService(customerDao);
 	private static ItemDao itemDao = new ItemDaoJDBC();
 	private static ItemService itemService = new ItemService(itemDao);
+	private static GroceryListDao listDao = new GroceryListDaoJDBC();
+	private static GroceryListService listService = new GroceryListService(listDao, itemDao);
+	
 	
 	public static void main(String[] args) {
 
@@ -64,6 +71,8 @@ public class JDBCDriver {
 			System.out.println("Press: 1 to register, Press 2: to view all Users, Press 3: to login as a customer, Press 4: To update information");
 			System.out.println("Press: 5 to delete a customer, Press 6: To add a new item to the store, Press 7: To view all the items in the store");
 			System.out.println("Press: 8 to search for an item by name, Press: 9 to update an item, Press 10: To delete an item");
+			System.out.println("Press: 11 to create a new list (you must be signed in), Press: 12 to add an item to your list, Press: 13 to delete on item from a list");
+			System.out.println("Press 14: to view a list by name");
 			
 			int choice = input.nextInt();
 			input.nextLine();
@@ -159,6 +168,38 @@ public class JDBCDriver {
 					int itemId = input.nextInt();
 					input.nextLine();
 					itemService.removeItemFromStore(itemId);
+					break;
+				case 11:
+					System.out.print("What would you like to name the list: ");
+					String listName = input.nextLine();
+					listService.addNewList(loggedIn, listName);
+					break;
+				case 12:
+					System.out.print("Which list would you like to modify: ");
+					listName = input.nextLine();
+					System.out.print("Which item would you like to add: ");
+					itemName = input.nextLine();
+					listService.addItemToList(listName, itemName);
+					break;
+				case 13:
+					System.out.print("Which list would you like to modify: ");
+					listName = input.nextLine();
+					System.out.print("Which item would you like to delete: ");
+					itemName = input.nextLine();
+					listService.removeItemFromList(listName, itemName);
+					break;
+				case 14:
+					System.out.print("Which list would you like to view: ");
+					listName = input.nextLine();
+					GroceryList gl = listService.getListByName(listName);
+					if(gl != null) {
+						System.out.println(gl.getListName());
+						for(int i=0; i<gl.getItems().size(); i++) {
+							Item item = gl.getItems().get(i);
+							System.out.println((i+1)+". " + item.getItemName() +"\t" + item.getItemType() + "\t" + item.getPrice());
+						}
+					}
+					//System.out.println(gl);
 					break;
 				default:
 					System.out.println("I didn't understand");

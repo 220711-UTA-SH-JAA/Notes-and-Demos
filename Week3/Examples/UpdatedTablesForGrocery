@@ -1,0 +1,49 @@
+CREATE TABLE customer(
+	customer_id int primary key generated always as identity,
+	first_name varchar(64),
+	last_name varchar(64),
+	username varchar(64) unique,
+	email varchar(164) unique,
+	password varchar(256)
+);
+
+
+-- If we remove customer, we do not want to keep their old lists store in the database
+-- So all lists corresponding to that user will be removed
+CREATE TABLE grocery_list(
+	list_id int primary key generated always as identity,
+	list_name varchar(64),
+	customer_fk int references customer(customer_id) on delete cascade not null
+);
+
+CREATE TABLE item_type(
+	type_id int primary key,
+	type_name varchar(64)
+);
+
+INSERT INTO item_type values 
+	(1, 'MEAT'), 
+	(2, 'PRODUCE'), 
+	(3, 'BEVERAGE'), 
+	(4, 'SNACK'), 
+	(5, 'SAUCE'),
+	(6, 'HOUSEHOLD'), 
+	(7, 'OTHER');
+
+-- If we remove an item type, the items referencing that type will also be removed
+-- If we wanted we could argue we would rather set the item_type to null instead
+-- This implementation would be up to you
+CREATE TABLE item(
+	item_id int primary key generated always as identity,
+	item_name varchar(64),
+	item_type_fk int references item_type(type_id) on delete cascade not null,
+	item_price numeric
+);
+
+-- If we delete a grocery list it should remove all entries for that list in the item_list_junction
+-- If we delete an item, it should remove all entries for that item in the item_list_junction
+CREATE TABLE item_list_junction(
+	list int references grocery_list(list_id) ON DELETE CASCADE,
+	item int references item(item_id) ON DELETE CASCADE,
+	primary key(list, item)
+);

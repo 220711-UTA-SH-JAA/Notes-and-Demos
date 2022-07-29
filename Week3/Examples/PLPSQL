@@ -1,0 +1,147 @@
+/* 	PLP/SQL Procedural Language (Postgre) SQL
+	allows us to create resuable functions and other bit of sql directly in our database
+	- makes our sql closer to a programming language
+
+	Functions vs Stored Procedures
+
+	Stored Procedures
+	- Resuable pieces of code in SQL that have these properties
+		- Don't return anything (think insert, delete, update, etc)
+		- May or may not contain IN and OUT parameters
+		- They allow any DML statement
+		- Can call other other stored procedures
+		- Cannot use them INSIDE of a DML statement
+*/
+
+-- Our first stored procedure
+-- Create our procedure, or replace if it already exists
+
+INSERT INTO customer (first_name, last_name, username, email, password)
+	VALUES ('Ethan', 'McGill', 'emcgill', 'ethan@email.com', 'password');
+
+SELECT * FROM customer;
+
+CREATE OR REPLACE PROCEDURE create_list(n varchar(64), c int)
+AS $$
+	-- Inside of the begin is where our actual logic goes
+	BEGIN
+		INSERT INTO grocery_list(list_name, customer_fk)
+			VALUES(n, c);
+	END;
+$$ language 'plpgsql';
+
+-- How to call a stored procedure
+CALL create_list('Ethans Kroger List', 1);
+
+SELECT * FROM grocery_list;
+
+INSERT INTO item (item_name, item_type_fk, item_price ) VALUES ('Milk', 3, 2.99);
+
+--Lets create a stored procedure to modify the list item junction table, since we will not have a dedicated dao for that
+CREATE OR REPLACE PROCEDURE add_item_to_list(li int, ii int)
+AS $$
+	BEGIN
+		INSERT INTO item_list_junction VALUES (li, ii);
+	END;
+$$ language 'plpgsql';
+
+CALL add_item_to_list(1, 1);
+
+SELECT * FROM item_list_junction;
+
+CREATE OR REPLACE PROCEDURE delete_item_from_list(li int, ii int)
+AS $$
+	BEGIN 
+		DELETE FROM item_list_junction WHERE list = li AND item = ii;
+	END;
+$$ language 'plpgsql';
+
+CALL delete_item_from_list(1, 1);
+
+/*	Functions
+	Reusable code in PL/SQL that do return values and have these properties
+	- Allow cursors
+		- Cursors are virtual result sets, that can be used to return multiple valuse from a function
+	- Should only return one single value
+	- They may or may not use input parameters
+	- Only use select statements
+	- Can call other functions
+	- They be used with other DML
+	- You have to use a DML statement to call the function
+		- Instead of using call, we will use the SELECT keyword to call our functions
+*/
+
+-- We might want to get all the data for all the lists
+-- Or we might want to get all the data for a specific list
+
+
+SELECT * FROM customer c inner join grocery_list gl on gl.list_name = 'Ethans Kroger List';
+
+SELECT * FROM item_list_junction ilj inner join
+(SELECT * FROM customer c inner join grocery_list gl on gl.list_name = 'Ethans Kroger List') as cgl
+on ilj.list = cgl.list_id;
+
+SELECT iljc.list_id as ListId,
+iljc.list_name as ListName,
+i.item_id as ItemId,
+i.item_name as ItemName,
+i.item_type_fk as ItemType,
+i.item_price as ItemPrice,
+iljc.customer_id as CustomerId,
+iljc.first_name as FirstName,
+iljc.last_name as LastName,
+iljc.username as Username,
+iljc.email as Email
+FROM item i inner join
+(SELECT * FROM item_list_junction ilj inner join
+(SELECT * FROM customer c inner join grocery_list gl on gl.list_name = 'Ethans Kroger List') as cgl
+on ilj.list = cgl.list_id) as iljc on iljc.item = i.item_id;
+
+SELECT * FROM item_list_junction ilj inner join item i on i.item_id = ilj.item and ilj.list = 1;
+
+DROP FUNCTION get_list_by_name;
+
+CREATE OR REPLACE FUNCTION get_list_by_name(lname varchar(64))
+-- This refcursor will be a reference to the result set of the query inside
+returns refcursor as $$
+declare ref refcursor;
+	BEGIN
+		open ref for 
+			SELECT iljc.list_id as ListId,
+			iljc.list_name as ListName,
+			i.item_id as ItemId,
+			i.item_name as ItemName,
+			i.item_type_fk as ItemType,
+			i.item_price as ItemPrice,
+			iljc.customer_id as CustomerId,
+			iljc.first_name as FirstName,
+			iljc.last_name as LastName,
+			iljc.username as Username,
+			iljc.email as Email
+			FROM item i inner join
+				(SELECT * FROM item_list_junction ilj inner join
+				(SELECT * FROM customer c inner join grocery_list gl on gl.list_name = lname) as cgl
+				on ilj.list = cgl.list_id) as iljc on iljc.item = i.item_id;
+			return ref;
+	END;
+$$ language 'plpgsql';
+
+-- To view the return of our function, we must turn off autocommit, because as soon as we commit, the reference
+-- to the result set goes away
+SELECT * FROM get_list_by_name('Ethans Kroger List');
+
+commit;
+
+CREATE OR REPLACE FUNCTION get_number_of_items(l_name varchar(64))
+returns int as $$
+declare item_count int;
+BEGIN
+	SELECT INTO item_count count(*) FROM item_list_junction ilj inner join
+		(SELECT * FROM customer c inner join grocery_list gl on gl.list_name = l_name) as cgl
+		ON ilj.list = cgl.list_id;
+	return item_count;
+END
+$$ language 'plpgsql';
+
+SELECT * FROM get_number_of_items('Ethans Kroger List');
+
