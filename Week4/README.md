@@ -70,7 +70,7 @@ One-on-ones/Project Checkins
 
 ### 30. What are the different ranges for http status codes?
 
-## Day 1:
+## Day 2:
 
 ### Activities:
 
@@ -117,3 +117,95 @@ Work On P1
 ### 19. What is ServletContext?
 
 ### 20. What is the difference between eager and lazy loading?
+
+## Day 3.
+
+### Activities:
+
+Work on P1
+
+## Questions:
+
+### 1. What is the MVC design pattern?
+
+### 2. What is each component of the MVC design pattner?
+
+### 3. What is the front controller design pattern?
+
+### 4. How do you implement the front controller design pattern?
+
+### 5. What is an advantage of the front controller design pattern?
+
+### 6. What is the request dispatcher?
+
+### 7. What does it mean to forward a request?
+
+### 8. How do you forward a request with servlets?
+
+### 9. What does it mean to redirect a request?
+
+### 10. How do you redirect a request with servlets?
+
+### 11. How can you handle exceptions with servlets?
+
+### 12. What are some ways of handling sessions for your application?
+
+### 13. What is the HTTPSessions API?
+
+### 14. How do you use the HttpSessions API?
+
+### 15. How does the HttpSessions API work?
+
+### 16. What is URL Rewriting?
+
+### 17. What are hidden form fields?
+
+### 18. What are cookies?
+
+### 19. How would you use cookies?
+
+## Day 3.
+
+### Activities:
+
+Work on P1
+
+## Questions:
+
+### 1. What is the MVC design pattern?
+
+### 2. What is each component of the MVC design pattner?
+
+### 3. What is the front controller design pattern?
+
+### 4. How do you implement the front controller design pattern?
+
+### 5. What is an advantage of the front controller design pattern?
+
+### 6. What is the request dispatcher?
+
+### 7. What does it mean to forward a request?
+
+### 8. How do you forward a request with servlets?
+
+### 9. What does it mean to redirect a request?
+
+### 10. How do you redirect a request with servlets?
+
+### 11. How can you handle exceptions with servlets?
+
+### 12. What are some ways of handling sessions for your application?
+
+### 13. What is the HTTPSessions API?
+
+### 14. How do you use the HttpSessions API?
+
+### 15. How does the HttpSessions API work?
+
+### 16. What is URL Rewriting?
+
+### 17. What are hidden form fields?
+
+### 18. What are cookies?
+
+### 19. How would you use cookies?

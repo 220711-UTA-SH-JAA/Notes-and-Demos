@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://JAVA.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <!-- Deployment Descriptor
+  	Java web applications use a deployment descriptor file to define URL's and to map serlvets to those URL'S
+  	
+  	The descriptor file specifies the classes, resources, and configuration and the web service uses them to serve 
+  	HTTP Requests
+  	
+  	The descriptor has to be called web.xml, and it has to be stored in the WEB-INF folder
+  
+   -->
+  
+  <display-name>HelloServlets</display-name>
+  
+  <!-- Mapping Servlets 
+  	You must declare and map the servlets here in the web.xml
+  	
+  	You use the <servlet> tag and nest <servlet-name> and <servlet-class> to map the servlet
+  	
+  	You use <servlet-mapping> and nest <servlet-name> and <url-pattern> to map a servlet to a specified url
+  
+  -->
+  <servlet>
+  	<servlet-name>SimpleTextServlet</servlet-name>
+  	<servlet-class>com.example.servlets.TextServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SimpleTextServlet</servlet-name>
+  	<url-pattern>/text</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SimpleJsonServlet</servlet-name>
+  	<servlet-class>com.example.servlets.SimpleJSONServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SimpleJsonServlet</servlet-name>
+  	<url-pattern>/json</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  		Servlet Config and Servlet Context
+  		
+  		Servlet Config
+  		- an object created by the servlet container, that is used to pass any initial parameters/values to the particular
+  			servlet
+  		- Setup inside of the servlet tags in the web.xml
+  		- Use the <init-param> and nest the <param-name> and <param-value> inside
+  		- You can get access to this parameter by using .getServletConfig() static method
+  		
+  		Servlet Context
+  		- an object created by the Servlet container to share initial parameters/values to ALL servlets in the container
+  		- Use the <contex-param> with <param-name> and <param-value> nested inside
+  		- You can access these values using the .getServletContext() static method
+  		
+  		Eager Loading vs Lazy Loading Servlets
+  		
+  		The <servlet> tag has a sub element called <load-on-startup> which is used to tell the servlet container to initialize
+  		the servlet as soon as the container starts up
+  		
+  		Eager Loading:
+  		- starting the servlet as soon as the servlet container starts up
+  		
+  		As mentioned above we can cause this to happen by using the load-on-startup
+  		
+  		We can also provide a number inside of the load-on-startup, which tells the servlet container which order the servlets
+  		should be started
+  		
+  		Lazy Loading
+  		when the container is started up, it doesn't initialize or startup the servlet until it is actually needed
+  		- As soon as the first request comes through, that is when the servlet will start up
+  		
+  		Why?
+  		
+  		You can save on resources while you don't need a specific servlet/servlets active
+  		- Downside, it may take a little longer the very first request
+   -->
+   
+   <!-- Servlet Context -->
+   <context-param>
+   	<param-name>global-context</param-name>
+   	<param-value>This is available everywhere</param-value>
+   </context-param>
+   
+   
+   <servlet>
+   	<servlet-name>ConfigContextServlet</servlet-name>
+   	<servlet-class>com.example.servlets.ConfigContextExample</servlet-class>
+   	<!-- Setup the servlet config -->
+   	<init-param>
+   		<param-name>my-config</param-name>
+   		<param-value>value only available to this servlet</param-value>
+   	</init-param>
+   	<!-- Eagerly load -->
+   	<load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+   	<servlet-name>ConfigContextServlet</servlet-name>
+   	<url-pattern>/config</url-pattern>
+   </servlet-mapping>
+  
+</web-app>
