@@ -209,3 +209,65 @@ Work on P1
 ### 18. What are cookies?
 
 ### 19. How would you use cookies?
+
+## Day 4.
+
+### Activities:
+
+HTML hands on
+
+Work on P1
+
+### Questions:
+
+### 1. What is HTML?
+
+### 2. What are HTML elements?
+
+### 3. How do you use HTML elements?
+
+### 4. What are the two types of HTML elements?
+
+### 5. Name some commonly used HTML elements?
+
+### 6. How do you create an HTML table?
+
+### 7. How do you create a list in HTML?
+
+### 8. What are HTML attributes?
+
+### 9. What are the main global HTML attributes
+
+### 10. What are special HTML attributes that specific tags have?
+
+### 11. What is the DOCTYPE tag?
+
+### 12. What is the root of the HTML page?
+
+### 13. What other tags get nested into the HTML tag?
+
+### 14. What is significant about HTML 5?
+
+### 15. What are semantic tags?
+
+### 16. What are some semantic tags talked about in lecture?
+
+### 17. How would you embed audio directly into your HTML page?
+
+### 18. How would you embed video directly into your HTML page?
+
+### 19. What is the HTML form element used for?
+
+### 20. What are the special form attributes?
+
+### 21. What are input elements?
+
+### 22. What attributes do input elements have?
+
+### 23. What are the different input types that can be used in a form?
+
+### 24. Do inputs HAVE to go into a form element?
+
+### 25. How would you construct a drop down menu for a website?
+
+### 26. How do you submit a form without javascript?
