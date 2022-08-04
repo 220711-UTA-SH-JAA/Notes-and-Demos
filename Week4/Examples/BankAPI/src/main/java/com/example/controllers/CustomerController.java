@@ -6,8 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.example.dao.AccountDaoImpl;
 import com.example.dao.CustomerDaoImpl;
 import com.example.models.Customer;
+import com.example.services.AccountService;
 import com.example.services.CustomerService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +19,7 @@ public class CustomerController {
 	//Static methods, that the dispatcher can call
 	
 	private static ObjectMapper mapper = new ObjectMapper();
-	private static CustomerService customerService = new CustomerService(new CustomerDaoImpl());
+	private static CustomerService customerService = new CustomerService(new CustomerDaoImpl(), new AccountService(new AccountDaoImpl()));
 	
 	public static void register(HttpServletRequest req, HttpServletResponse res) {
 		System.out.println("Running the register logic in the Customer Controller");
@@ -69,24 +71,22 @@ public class CustomerController {
 		
 		try {
 			
-			String bodyData = new String(req.getInputStream().readAllBytes());
+			//String bodyData = new String(req.getInputStream().readAllBytes());
 			
-			String username = mapper.readTree(bodyData).findValue("username").asText();
+			//String username = mapper.readTree(bodyData).findValue("username").asText();
+			
+			String username = req.getParameter("username");
 			
 			System.out.println(username);
 			
 			Customer loggedIn = customerService.loginCustomer(username);
 			
-			if(loggedIn == null) {
-				res.setStatus(404);
-				res.getWriter().write("User does not exist");
-				return;
-			}
-			
-			res.getWriter().write(mapper.writeValueAsString(loggedIn));
-			
 			// I would like to forward our request/response to a Authentication controller, to save the users session so they don't have to
 			// login again
+			req.setAttribute("customer", loggedIn);
+			
+			//You could just set the session inside of the login method, but I wanted to show you all the forward method
+			
 			req.getRequestDispatcher("auth/login").forward(req, res);
 			
 		} catch (IOException | ServletException e) {

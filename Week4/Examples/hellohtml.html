@@ -1,0 +1,111 @@
+<!--
+    HTML: HyperText Markup Language
+    - Hypertext refers to the ability to link pages to one another
+    - Markup refers to the fact that it is not a programming language, rather it is used to
+        describe how a webpage should look
+    - Is the standard for displaying data on the web
+
+    Html Elements Tags and Attributes
+
+    Element is used to provide structure to the HTML page
+
+    To create elements you use the corresponding tag
+    - The tags use angled brackets, with the letter/name of the element
+    - Most tags use opening and closing tags, the closing tag also has the name of the element, preceded by a /
+        - <tag></tag>
+    - Some tags are selfclosing, meaning they don't need a separate closing tag
+        - </tag>
+
+    We use these tags to create hierarchies of elements, that will be displayed on a web page
+        <tag>
+            <tag></tag>
+        </tag>
+    
+    The two types of Elements in HTML:
+    - Block level: that will render on a new line by default
+    - Inline: will render beside each other on the same line
+
+    The 3/4 elements NEEDED to create an Html page
+
+    <!DOCTYPE html>
+    - A special tag which tells the browser what type of document it is displaying
+        - Every html document should begin with one of these
+        - Adding the html inside of the tag, will specify we are using HTML5
+        - This should always be the first line
+
+    <html></html>
+    - The html tag is the root of the html document
+        - every element making up the html page will go inside of this tag
+
+    <head></head>
+    - Gets nested inside of the html tag, and it holds metadata for the browser
+        - title on the tab of the browser
+        - and seo engine optimizations/keywords
+
+    <body></body>
+    - Gets nested inside of the html tags, and it holds the actual structure of your webpage
+        - Almost all of your html elements will go in here
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hello HTML</title>
+    </head>
+    <body>
+
+        <!-- HTML Tables: allows us to more nicely structure data on the page -->
+        <!-- Lets just create a quick nav bar with a table, back in the day, entire website layout were
+            formed from tables
+        -->
+        <!-- To create a table we use the table tag <table><table>
+            Inside we can use:
+                - <thead>: create a table row which acts as a header
+                    - <th>: creates a table header column
+                - <tr>: creates a normal table row 
+                    -<td>: creates a normal table column
+                - <tbody>: creates the "body" of the table
+                - <tfoot>: create a footer on the table
+        -->
+        <!--    HTML Attributes
+                Are key/value pairs that give metadata about the tag that is important for the browser to know
+                - These will be specified inside of the opening tag of the element
+                - Can be thought of as paremeters defining a specific attribute
+                - Primarily going to be used to help us select elements from our page with CSS or JS
+
+                Important global attributes you should know
+                - class: this applies a class to some elements, they then can be selected as a group
+                - id: this should unique, used to select specific element
+                - hidden: should this element be seen by the client?
+                - lang: what language is the element in?
+                - style: for inline css
+                - title:
+
+                There are also special attributes for specigic tags:
+                - src on the img
+                - href on the a
+        -->
+        <table>
+            <thead>
+                <!-- Anchor tag: links a html document to another html doument -->
+                <th><a>Revature Bank</a></th>
+                <th><a href="accounts.html">View Accounts</a></th>
+                <th><a href="secretbox.html">Open the Box and Pull the String</a></th>
+                <th><a href="login.html">Login</a></th>
+            </thead>
+        </table>
+
+        <!-- Common HTML elements you will probably see -->
+        <!-- div: used a division of the page, these are block level, and are used to group other block
+             level elements together -->
+        <div>
+            <!-- Common text elements -->
+            <!-- Headers: <h1></h1> to <h6><h6>-->
+            <h1>Welcome to our bank</h1>
+            <h3>We are a totally legit business</h3>
+            <h6>Don't forget to read the fine print</h6>
+            <!-- Paragraph: is for normal text on the page -->
+            <p>We have been rated the best online bank, by Revature associates</p>
+        </div>
+    </body>
+</html>

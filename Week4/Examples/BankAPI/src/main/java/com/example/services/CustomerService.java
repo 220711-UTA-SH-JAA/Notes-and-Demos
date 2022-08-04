@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.example.dao.CustomerDao;
+import com.example.exceptions.UserDoesNotExistException;
 import com.example.models.Customer;
 
 public class CustomerService {
@@ -11,11 +12,13 @@ public class CustomerService {
 	//This needs access to the DAO to be able to query the database
 	//We will pass an instance of the Customer DAO to the service through the constructor
 	private CustomerDao customerDao;
+	private AccountService accountService;
 	
 	
 	//Now when we create an instance of our CustomerService, we MUST pass it an instance of the CustomerDao
-	public CustomerService(CustomerDao customerDao) {
+	public CustomerService(CustomerDao customerDao, AccountService accountService) {
 		this.customerDao = customerDao;
+		this.accountService = accountService;
 	}
 	
 	public Customer registerCustomer(String first, String last, String username, String password) {
@@ -38,12 +41,13 @@ public class CustomerService {
 		
 		for(Customer c: customers) {
 			if(c.getUsername().equals(username)) {
+				c.setAccounts(accountService.getCustomerAccounts(c));
 				return c;
 			}
 		}
 		
 		//You may want to instead throw an exception
-		return null;
+		throw new UserDoesNotExistException();
 		
 	}
 	

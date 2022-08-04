@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Login to the bank</h1>
+        <!--
+            Form/Input elements and their attributes
+
+            We are going to use forms to collect data from our users on the web
+            - Use <form> to create a new form
+            
+            The form tag has three main attributes you can set
+            - action: the URL to the api/resource the form will call by defualt
+            - target: tells the webpage where to load the new page
+            - method: specifies which type of method to use when submitting
+
+            Inside of the form tag, you will typically see input elements
+
+            The input tag will actually take in the user input
+            - the following attributes for the input tags go as follows
+                - name: provides a name/label for the input
+                - value: allows you to provide a default value for the field
+                - placeholder: will allow for some placeholder text inside of the field
+                - required: force the user to fill the input out before submitting
+                - more...
+            
+            
+            Input types
+                - text: one line of text (default)
+                - password: convert the text into dots
+                - radio: buttons that only allow one selection per group of buttons
+                - check boxes: buttons that allow multiple selection per group of buttons
+                - file select: allows you input a file
+                - textarea: multiline text input
+                - select: dropdown that allows a user to choose some value
+                - reset and submit: these do exactly as they say
+        -->
+        <!-- The default action of submitting a form, will send a request to the action, and reload the page -->
+        <form action="http://localhost:8080/BankAPI/api/login" method="POST">
+            <label for="username">Username: </label>
+            <input name="username" type="text" placeholder="username" required />
+            <input type="submit" value="Login"/>
+        </form>
+
+        <!--
+            Select and Multi-select:
+            Is a special input that allows you to select values from a drop down
+            - Use the select tag to create it
+                - nest <option> inside of the select tag
+            - If you want to allow the users to select multiple values from the drop down
+                    - Use the multiple keyword in the select
+                    - To select multiple windows users hold ctrl and select multiple, mac users hold command and select multiple
+        -->
+        </br>
+        <form>
+            <label for="account-type">Account Type</label>
+            <select name="account-type" value="Checking">
+                <option value="Checking">Checking</option>
+                <option value="Saving">Saving</option>
+            </select>
+            
+            <!-- Adds white space to the page -->
+            </br>
+
+            <label for="starting-balance">Starting Balance</label>
+            <input type="number" placeholder="0.00" value=0 />
+            <input type="submit" value="Create new Account" />
+        </form>
+    </body>
+</html>

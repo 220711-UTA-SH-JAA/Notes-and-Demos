@@ -214,7 +214,15 @@ Work on P1
 
 ### Activities:
 
-HTML hands on
+### HTML hands on:
+
+1. Create an HTML page and name it what ever you want
+
+2. For each member of your breakout room create a div with this information:
+    - Your name
+    - Your background (schooling)
+    - List of your top 3 movies
+    - Optional add an image for each person
 
 Work on P1
 

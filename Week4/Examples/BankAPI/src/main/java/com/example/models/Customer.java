@@ -1,5 +1,8 @@
 package com.example.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
 	
 	private int customerId;
@@ -7,9 +10,11 @@ public class Customer {
 	private String lastName;
 	private String username;
 	private String password;
+	private List<Account> accounts;
 	
 	public Customer() {
 		//This will create a Customer object with default values
+		accounts = new ArrayList<>();
 	}
 	
 	public Customer(int id, String first, String last, String username, String password) {
@@ -18,6 +23,7 @@ public class Customer {
 		this.lastName = last;
 		this.username = username;
 		this.password = password;
+		this.accounts = new ArrayList<>();
 	}
 
 	public int getCustomerId() {
@@ -60,9 +66,17 @@ public class Customer {
 		this.password = password;
 	}
 
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", username=" + username + ", password=" + password + "]";
+				+ ", username=" + username + ", password=" + password + ", accounts=" + accounts + "]";
 	}
 }

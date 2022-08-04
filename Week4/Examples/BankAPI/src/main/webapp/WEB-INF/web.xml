@@ -12,4 +12,38 @@
   	<!-- We will use the * wildcard to match any request -->
   	<url-pattern>/api/*</url-pattern>
   </servlet-mapping>
+  
+  <!-- 
+  		Exception and Error Handling with servlets
+  		
+  		The servlet API allows us to handle exceptions, and error codes causes during the execution of a servlet, and still
+  		send a useful response
+  		
+  		You just need to include <error-page> element in your web.xml, this is used to specify the invocation of servlets
+  		in response to a certain exception or status code.
+  		
+  		<error-code> to specify the status code
+  		<exception-type> to specify an exception
+  		<location> used to specify the location of the resource to display/call upon
+  		
+  		Before the servlet contrainer invokes the servlet to handle an exception, it sets some attributes in the request
+  		These could be useful
+  		
+  		servlet.error.status_code
+  		servlet.error.servlet_name
+  		servlet.error.exception
+  		servlet.error.request_uri
+  		servlet.error.exception_type
+  		servlet.error.message
+   -->
+   <error-page>
+   	<exception-type>com.example.exceptions.UserDoesNotExistException</exception-type>
+   	<location>/api/invalid/user</location>
+   </error-page>
+   
+   <error-page>
+   	<exception-type>com.example.exceptions.OverDraftException</exception-type>
+   	<location>/api/invalid/withdraw</location>
+   </error-page>
+  
 </web-app>
