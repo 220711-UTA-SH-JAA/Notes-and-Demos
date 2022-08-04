@@ -279,3 +279,23 @@ Work on P1
 ### 25. How would you construct a drop down menu for a website?
 
 ### 26. How do you submit a form without javascript?
+
+## Day 5:
+
+### Activities:
+
+Work on P1
+
+### Questions:
+
+### 1. What is CSS?
+
+### 2. How can link CSS to an HTML page? What are the three ways?
+
+### 3. Explain the CSS box model.
+
+### 4. What are some CSS properties you can change?
+
+### 5. What are some different ways to select specific elements to be styled?
+
+### 6. What is specificity in CSS?
