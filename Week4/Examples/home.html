@@ -1,0 +1,68 @@
+<!--
+    CSS Cascading Style Sheets
+    - A set of key/value pairs, that create rules that define how elements on a webpage look
+
+    A CSS rule is composed of selectors and delcarations
+    - Selector will select a specific html element or set of elements
+    - Declarations are comprised of properties and values surrounded by curly braces
+
+    Three was of using CSS with HTML
+    1. Inline CSS, this is CSS applied directly to an element in an HTML page, using the style attribute
+    2. Internal/embedded CSS, this is CSS written inside of a style tag inside the head of your document
+    3. External CSS, this is a completely independent file that you import in the head, and you put all of your
+        selectors and styles in that file
+        - use the <link rel="stylesheet" href="style.css">
+        - The reason this way is preferred is because you can reuse the same style sheet across multiple pages
+    
+    CSS Box Model: VERY IMPORTANT
+
+    The box model is used to determine how the webpage is rendered by the browser
+    - Every element in the web page is a series of boxes that CSS is able to modify
+
+    There are four boxes in this box model:
+    - Margin: is the outer most box
+    - Border: is the area between the margin and padding
+    - Padding: the area between the content and the border
+    - Content: this is the text/image/video/audio content being displayed
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Revabank</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="nav">
+            <table>
+                <thead>
+                    <!-- Anchor tag: links a html document to another html doument -->
+                    <th><a>Revature Bank</a></th>
+                    <th><a href="">Services</a></th>
+                    <th><a>Mobile Banking</a></th>
+                    <th><a>Create an Account</a></th>
+                </thead>
+            </table>
+        </div>
+        <div class="home-container">
+            <h1>Welcome to Revabank</h1>
+            <div class="form-container">
+                <form>
+                    <h3>Please Login Below</h3>
+                    <div class="input-container">
+                        <h3>Username/Email</h3>
+                        <input type="text" required placeholder="username" />
+                    </div>
+                    <div class="input-container">
+                        <h3>Password</h3>
+                        <input type="password" required minlength="8" placeholder="password"/>
+                    </div>
+                    <input type="submit" value="Login" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

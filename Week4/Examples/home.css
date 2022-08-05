@@ -1,0 +1,174 @@
+/*
+    CSS Properties:
+    There are numerous properties that you adjust to style different elements on our webpage
+    - border: allows you to change how the boarder looks
+    - padding: allows you to change how much padding an element should have
+    - margin: allows you to change how much margin an element should have
+    - diplay: allows you to change the behavior of how to reder the elements
+    - position: allows you to change where to display the element
+    - width: allows you to change the width of the element
+    - height: allows you to change the height of the element
+*/
+
+/* Cascading Nature of CSS 
+    In CSS you are allowed to have multiple rules for a single element, in order for the browser to decide
+    which rule to apply there is a style hierarchy, this is known specificity
+
+    Allows elements to be selected by multiple selectors, but styles that are more specific to a element
+    will override less specific styles
+
+    1. Inline CSS (most specific)
+    2. ID selectors
+    3. Class attribute selectors and Psuedo-class selectors
+    4. Element and Pseudo Element Selectors
+        - If we happen to use universal, the move element selector would also overrider that
+*/    
+
+
+/* CSS Selectors */
+
+/* Universal selector: selects all elements on the page */
+
+* {
+    /*Put our styles */
+    margin: 0;
+    padding: 0;
+    /* This determines how to size the boxes of the element
+        border-box, says to calculate the size of the element with all the content/padding/border/and margin*/
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Element selector: selects all elements of a specific type */
+/* Grouping selector: allows you select multiple elements with commas */
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+    color: #FFF8F0;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    padding: 50px;
+    border: 2px solid orangered;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: fit-content;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Id selector: #id, this will select a specific element by id */
+#nav{
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    height: 60px;
+    width: 100%;
+    background-color: orangered;
+}
+
+/* Child Selector: is used to select direct children of a specific element */
+/* Selecting all the children of the tr which are th */
+tr > th {
+    color: black;
+}
+
+/* Decendent Select: is used to select decendents at any level of specific element */
+/* Pseudo class selector: is used to specify the state of an element :hover */
+table a {
+    text-decoration: none;
+    color: black;
+}
+
+table a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* Class selector, will select all elements with the same class .classname */
+.home-container{
+    width: 90%;
+    height: 100%;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container{
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+/* Attribute selector [attribute] select elements with this specific attribute */
+[type="text"]{
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+}
+
+[type="text"]:focus{
+    outline:none;
+    padding: 5px;
+}
+
+[type="password"]{
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+}
+
+[type="password"]:focus{
+    outline:none;
+    padding: 5px;
+}
+
+[type="submit"]{
+    height: 50px;
+    width: 90%;
+    padding: 5px;
+    background-color: orangered;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
+
+[type="submit"]:hover{
+    height: 50px;
+    width: 90%;
+    padding: 5px;
+    background-color: #252525;
+    color: orangered;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px orangered solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
