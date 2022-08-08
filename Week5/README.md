@@ -79,3 +79,55 @@ Project 1
 ### 33. What are the let and const keywords?
 
 ### 34. What are special about the let and const keywords?
+
+## Day 2:
+
+### Activities:
+
+Project 1
+
+### Questions:
+
+### 1. How is inheritance implemented in Javascript?
+
+### 2. How is encapsulation implemented in Javascript?
+
+### 3. How is polymorphism implemented in Javascript?
+
+### 4. How is abstraction implemented in Javascript?
+
+### 5. What is a Javascript module?
+
+### 6. How do you create a javascript module?
+
+### 7. What is a template literal?
+
+### 8. How do you use a template literal in Javascript?
+
+### 9. What is an Iterator in Javascript?
+
+### 10. What is a generator in javascript?
+
+### 11. What does it mean to be Iterable in Javascript?
+
+### 12. What is strict mode in Javascript?
+
+### 13. What are the different uses of the `this` keyword in Javascript?
+
+### 14. What is the DOM?
+
+### 15. How do we gain access to the dom in Javascript?
+
+### 16. Explain how you could select a specific element from the HTML page?
+
+### 17. Explain how you could select a group of elements from the HTML page?
+
+### 18. Explain a few ways you could traverse through the DOM tree?
+
+### 19. Exaplin how you can gain access to the head element of the HTML page?
+
+### 20. Explain how you can gain access to the body tag of the HTML page?
+
+### 21. Explain how you can create and place elements into the HTML page with Javascript?
+
+### 22. Exmplain how you can insert values into elements of an html page?
