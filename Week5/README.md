@@ -131,3 +131,73 @@ Project 1
 ### 21. Explain how you can create and place elements into the HTML page with Javascript?
 
 ### 22. Exmplain how you can insert values into elements of an html page?
+
+## Day 3:
+
+### Activities:
+
+Async Hands On
+
+Project 1 Work
+
+### Questions:
+
+### 1. What are some different events you can listen for in javascript?
+
+### 2. How can you register an event listener?
+
+### 3. What is the event Object?
+
+### 4. What are some properties of the event object?
+
+### 5. Name some types of events that you know about?
+
+### 6. What is event bubbling?
+
+### 7. What is even capturing?
+
+### 8. What is asynchronous programming mean?
+
+### 9. How is asynchronous programming useful?
+
+### 10. How does asynchronous javascript work?
+
+### 11. What is the event loop?
+
+### 12. What is AJAX?
+
+### 13. How do you make an AJAX request?
+
+### 14. What are the 5 readyStates?
+
+### 15. How do you send and parse JSON objects from AJAX requests?
+
+### 16. What is the fetch API?
+
+### 17. How do you use the fetch API?
+
+### 18. What are promises?
+
+### 19. How do you chain promise functions?
+
+### 20. What is async await?
+
+### 21. How do you use async await?
+
+### 22. What are javascript errors?
+
+### 23. How do we handle javascript errors?
+
+### 24. How would your throw a javascript error?
+
+### 25. How do you create your own custom javascript error?
+
+### 26. What are timing events in javascript?
+
+### 27. How do you use setTimeout in Javascript?
+
+### 28. How do you stop a timeout?
+
+### 29. How do you use setInterval in Javascript?
+
+### 30. How do you stop an interval in Javascript?

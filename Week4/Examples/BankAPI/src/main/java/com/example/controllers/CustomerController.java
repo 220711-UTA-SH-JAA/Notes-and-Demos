@@ -71,11 +71,13 @@ public class CustomerController {
 		
 		try {
 			
-			//String bodyData = new String(req.getInputStream().readAllBytes());
+			String bodyData = new String(req.getInputStream().readAllBytes());
 			
-			//String username = mapper.readTree(bodyData).findValue("username").asText();
+			System.out.println(bodyData);
 			
-			String username = req.getParameter("username");
+			String username = mapper.readTree(bodyData).findValue("username").asText();
+			
+			//String username = req.getParameter("username");
 			
 			System.out.println(username);
 			
