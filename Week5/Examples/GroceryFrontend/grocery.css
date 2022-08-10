@@ -2,3 +2,16 @@
     background-color: #252525;
     color: #FFF8F0;
 }
+
+input {
+    outline: #FFF8F0;
+    border: 2px solid #FFF8F0;
+}
+
+button {
+    border: 2px solid #FFF8F0;
+}
+
+.remove{
+    background-color: red;
+}

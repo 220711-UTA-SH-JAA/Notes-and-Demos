@@ -7,10 +7,21 @@
     <body>
         <div id="root">
             <h1>Welcome to the grocery list app</h1>
+            <form>
+                <h3>Enter Item Name</h3>
+                <input name="itemName" id="item-name"/>
+                <h3>Enter Item Price</h3>
+                <input type="number" name="itemPrice" id="item-price" step="0.01"/>
+                <h3>Enter the Item Type</h3>
+                <input name="itemType" id="item-type"/>
+                </br>
+                <button id="submit-item">Submit Item</button>
+            </form>
             <div id="grocery-items">
                 <!-- Fill this div in with javascript-->
             </div>
         </div>
-        <script src="domManipulation.js"></script>
+        <!-- <script src="domManipulation.js"></script> -->
+        <script src="events.js"></script>
     </body>
 </html>
