@@ -216,3 +216,19 @@ Project 1 Work
     - Append the name of the pokemon on the screen
     - Append the image of the pokemon on the screen (sprites)
 5. Style it however you may like
+
+Project 1 Presentation
+
+### Questions:
+
+### 1. What is NodeJS?
+
+### 2. How do you use NodeJS?
+
+### 3. What is the package.json?
+
+### 4. How do you get dependencies with NodeJS?
+
+### 5. What is AWS S3?
+
+### 6. How can you host a static site on AWS S3?
