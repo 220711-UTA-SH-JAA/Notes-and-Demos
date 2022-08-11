@@ -201,3 +201,18 @@ Project 1 Work
 ### 29. How do you use setInterval in Javascript?
 
 ### 30. How do you stop an interval in Javascript?
+
+## Day 4:
+
+### Activities:
+
+### JS Fetch And Dom Manipulation Hands on
+
+1. Create a webpage with a single text input and submit button
+2. Prompt the user to input their favorite pokemon
+3. On submission, create a request to the pokeapi
+    - https://pokeapi.co/docs/v2#pokemon-section
+4. Process the response from your request and do the following
+    - Append the name of the pokemon on the screen
+    - Append the image of the pokemon on the screen (sprites)
+5. Style it however you may like
