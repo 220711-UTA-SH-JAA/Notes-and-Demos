@@ -232,3 +232,21 @@ Project 1 Presentation
 ### 5. What is AWS S3?
 
 ### 6. How can you host a static site on AWS S3?
+
+## Day 5:
+
+### Activities:
+
+### Create a stopwatch
+
+1. Create an HTML page with 2 buttons
+2. With JS one button should start an interval which counts every 1000th of a second
+3. Append the time passed on the html page in this format
+    - MM:SS:mmm
+4. With JS the second button should stop the inerval, which also stops the stopwatch
+5. Style the stopwatch to look better than the default HTML styles
+6. Time permitted, when the stopwatch is stopped, turn the second button into a reset button
+    - When clicked this should reset the clock value to 00:00:000
+7. Time permitted, create one more button called lap
+    - When this button is pressed, append the exact moment it was pressed below the stopwatch
+    - When the reset button is pressed, these should also be cleared off the page
