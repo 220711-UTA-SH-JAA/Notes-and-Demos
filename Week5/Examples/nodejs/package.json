@@ -1,0 +1,15 @@
+{
+  "name": "ethans-cool-program",
+  "version": "0.0.1",
+  "description": "This is some cool program, it will blow your mind",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ethan McGil",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
+}
