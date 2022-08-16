@@ -1,0 +1,44 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- Configuration:
+			- Is used to create the session factory
+			- Can be done with a xml file or just a class
+			- The configure() methods loads the mapping and properties from this file
+			- or you can use addAnnotatedClass() to specify classes
+			- setProperty() will allow you override/set a property in the class
+			- if they config file is not valid, an exception will be throw
+		Session Factory: used to create a session for us. SessionFactory is a threadsafe immutable object mapped to a 
+		single database, this is where the second level cache may be stored
+	-->
+	<session-factory>
+		<!-- The connection information -->
+		<property name="hibernate.connection.username"></property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.url"></property>
+		<property name="hibernate.connection.driver.class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- Connection Pool, this is a method of speeding up DB calls, Hibernate will open up a number of connections
+			 Everytime you create a session, it will borrow an active connection from the connection pool. When you close
+			 a session, the connection does not actually close, it just opens up in the connection pool once again
+		 -->
+		 <property name="hibernate.connection.pool_size">10</property>
+		 
+		 <!-- It controls how hibernate will startup, create: it will create all new database tables
+		 		update: update any tables
+		 		validate: checks to make sure the schema is still valid
+		 		create-drop: drops all tables and recreates them
+		  -->
+		 <property name="hibernate.hbm2ddl.auto">create</property>
+		 
+		 <!-- You would map the classes you want stored in the db below -->
+		 <mapping class="com.example.models.User"/>
+		 <mapping class="com.example.models.Account"/>
+		 <mapping class="com.example.models.Transaction"/>
+	</session-factory>
+
+</hibernate-configuration>
