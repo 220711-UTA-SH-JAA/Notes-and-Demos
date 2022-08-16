@@ -87,3 +87,73 @@ TBD
 ### 14. What are the two types of streams in Java?
 
 ### 15. How do you use Java Streams?
+
+### Day 3.
+
+### Activities
+
+TDB
+
+### Questions
+
+### 1. What is an ORM?
+
+### 2. Why do we want to use an ORM over JDBC?
+
+### 3. What are some ORM's available to us?
+
+### 4. What is JPA?
+
+### 5. What is Hibernate?
+
+### 6. What are the benefits of using Hibernate?
+
+### 7. What is the Hibernate hierarchy
+
+### 8. What is the Hibernate Configuration?
+
+### 9. Why do we need the Hibernate Configuration?
+
+### 10. What is the SessionFactory?
+
+### 11. What is the Session?
+
+### 12. What does the Session Object provide to the developer?
+
+### 13. What is a Transaction?
+
+### 14. Why do we need Transaction Objects?
+
+### 15. What are the different ways you can create a query in Hibernate?
+
+### 16. What are the benefits of using HQL or Criteria over Native SQL?
+
+### 17. What is XML?
+
+### 18. Where do we store Hibernate Configuration data?
+
+### 19. What are some important tags you can find in the hibernate configuration xml?
+
+### 20. What important properties do we need to create our connection to the database?
+
+### 21. How do you map the classes you want hibernate to map?
+
+### 22. What are the two ways to dirrectly map class properties to a database table?
+
+### 23. What are some of the annotations you will need to use to map a class to a table?
+
+### 24. In Hibernate, what is Native SQL?
+
+### 25. Why is it not recomended to use Native SQL?
+
+### 26. How do we create a Native SQL query?
+
+### 27. What is HQL?
+
+### 28. What is the benefit of using HQL?
+
+### 29. How do we create an HQL query?
+
+### 30. What is the Criteria API?
+
+### 31. How do you create a Criteria Query?
