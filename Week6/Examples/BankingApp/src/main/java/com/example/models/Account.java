@@ -128,7 +128,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountId=" + accountId + ", type=" + type + ", accountHolder=" + accountHolder + ", balance="
+		return "Account [accountId=" + accountId + ", type=" + type + ", accountHolder=" + accountHolder.getUsername() + ", balance="
 				+ balance + ", toTransactions=" + toTransactions + ", fromTransactions=" + fromTransactions + "]";
 	}
 

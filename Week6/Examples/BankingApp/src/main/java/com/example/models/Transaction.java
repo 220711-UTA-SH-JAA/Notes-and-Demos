@@ -105,7 +105,7 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [transactionId=" + transactionId + ", type=" + type + ", amount=" + amount + ", to=" + to
+		return "Transaction [transactionId=" + transactionId + ", type=" + type + ", amount=" + amount + ", to=" + to.getAccountId()
 				+ ", from=" + from + "]";
 	}
 }

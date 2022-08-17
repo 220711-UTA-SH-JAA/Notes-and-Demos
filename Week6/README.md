@@ -157,3 +157,47 @@ TDB
 ### 30. What is the Criteria API?
 
 ### 31. How do you create a Criteria Query?
+
+## Day 4.
+
+### Activities:
+
+Work on P2
+
+### Questions:
+
+### 1. What are the Object states in Hibernate?
+
+### 2. What are named queries?
+
+### 3. How do you create a named query in Hibernate?
+
+### 4. How do you call a named query?
+
+### 5. What is caching in Hibernate?
+
+### 6. What is first level cache in Hibernate?
+
+### 7. Where is first level cache stored in Hibernate?
+
+### 8. What is second level cache in Hibernate?
+
+### 9. Where is second level cache stored in Hibernate?
+
+### 10. How does caching work in Hibernate?
+
+### 11. How do you setup second level caching?
+
+### 12. What are the properties of an SQL transaction?
+
+### 13. What is logging in Java?
+
+### 14. What is Logback?
+
+### 15. How do you setup LogBack?
+
+### 16. What are logging levels?
+
+### 17. How do you setup your applications logging level?
+
+### 18. What is the service locator design pattern?

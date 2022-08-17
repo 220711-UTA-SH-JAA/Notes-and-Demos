@@ -3,6 +3,7 @@ package com.example.dao;
 import java.util.List;
 
 import com.example.models.Account;
+import com.example.models.User;
 
 public interface AccountDao {
 	
@@ -15,5 +16,7 @@ public interface AccountDao {
 	void updateAccount(Account a);
 	
 	boolean deleteAccount(Account a);
+	
+	List<Account> readAccountsByUser(User u);
 
 }
