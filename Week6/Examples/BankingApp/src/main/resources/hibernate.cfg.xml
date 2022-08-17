@@ -33,7 +33,7 @@
 		 		validate: checks to make sure the schema is still valid
 		 		create-drop: drops all tables and recreates them
 		  -->
-		 <property name="hibernate.hbm2ddl.auto">create</property>
+		 <property name="hibernate.hbm2ddl.auto">create-drop</property>
 		 
 		 <!-- You would map the classes you want stored in the db below -->
 		 <mapping class="com.example.models.User"/>

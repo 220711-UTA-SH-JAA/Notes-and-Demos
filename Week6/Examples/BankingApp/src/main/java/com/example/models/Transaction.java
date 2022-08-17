@@ -1,12 +1,37 @@
 package com.example.models;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="transactions")
 public class Transaction {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="transaction_id")
 	private Integer transactionId;
+	
+	@Column(name="transaction_type")
 	private String type;
+	
+	@Column(name="transaction_amount")
 	private Double amount;
+	
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="incoming_account")
 	private Account to;
 	//I am about to break the rules and set this to null
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="outgoing_account", nullable=true)
 	private Account from;
 	
 	public Transaction() {
