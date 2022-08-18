@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
@@ -36,6 +37,21 @@ import javax.persistence.JoinColumn;
  * - used to name the table something different from the class name
  */
 
+/* Named Queries: SQL expressions put above a class with a predefined unchangeble query string
+ * 
+ * To declare them, you use annotations above the entity class
+ * - @NamedQueries: allows you to define multiple HQL expressions
+ * - @NamedQuery: allows you to define a single HQL expression
+ * - @NamedNativeQueries: allows you to define multiple native queries
+ * - @NamedNativeQuery: allows you to define a single native query
+ * 
+ * @NamedQuery annotions have two attributes
+ * - name: used to name the query
+ * - query: is the actual query
+ * 
+ */
+
+@NamedQuery(name="getUsersTransactions", query="select u.transactions from User u where u.userId=:id")
 @Entity
 @Table(name="users")
 public class User {

@@ -7,7 +7,7 @@ import com.example.models.User;
 
 public interface AccountDao {
 	
-	void createAccount(Account a);
+	int createAccount(Account a);
 	
 	Account readAccountByNumber(int id);
 	

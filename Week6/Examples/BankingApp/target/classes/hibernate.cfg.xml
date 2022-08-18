@@ -10,7 +10,7 @@
 		<property name="hibernate.connection.password">password</property>
 		<property name="hibernate.connection.url">jdbc:postgresql://em-220711-jaa.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/hibernatebank</property>
 		<property name="hibernate.connection.driver.class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<property name="hibernate.show_sql">false</property>
 		<property name="hibernate.format_sql">false</property>
 		
@@ -25,7 +25,7 @@
 			Validate which checks to make sure that the schema exists as expected
 			Update, will not alter the schema, it will add to the schema if you need more objects
 			None hibernate will do nothing to your schema -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		
 		<!-- We will map our classes below -->
 		<mapping class="com.example.models.User"/>

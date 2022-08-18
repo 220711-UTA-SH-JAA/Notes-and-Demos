@@ -15,4 +15,20 @@
   	<url-pattern>/api/*</url-pattern>
   </servlet-mapping>
   
+  <!-- Exception Handler Servlets -->
+  <error-page>
+  	<exception-type>com.example.exceptions.UserAlreadyExistsException</exception-type>
+  	<location>/api/exceptions/users/exists</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>com.example.exceptions.IncorrectCredentialsException</exception-type>
+  	<location>/api/exceptions/users/incorrect</location>
+  </error-page>
+  
+   <error-page>
+  	<exception-type>com.example.exceptions.InvalidTransactionException</exception-type>
+  	<location>/api/exceptions/transaction/invalid</location>
+  </error-page>
+  
 </web-app>

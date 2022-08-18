@@ -12,15 +12,17 @@ import com.example.utils.HibernateUtil;
 public class AccountDaoHibernate implements AccountDao{
 
 	@Override
-	public void createAccount(Account a) {
+	public int createAccount(Account a) {
 		//Builtin save method from hibernate
 		Session ses = HibernateUtil.getSession();
 		
 		Transaction transaction = ses.beginTransaction();
 		
-		ses.save(a);
+		int id = (Integer)ses.save(a);
 		
 		transaction.commit();
+		
+		return id;
 		
 	}
 
@@ -38,13 +40,20 @@ public class AccountDaoHibernate implements AccountDao{
 		 */
 		
 		//Account is the actual class we are querying, and accountId is the property on the Account class
-		return ses.createQuery("from Account where accountId=:id", Account.class).setParameter(0, id).uniqueResult();
+		Account a = ses.createQuery("from Account where accountId=:id", Account.class).setParameter("id", id).uniqueResult();
+		
+		return a;
 	}
 
 	@Override
 	public List<Account> readAllAccounts() {
 		//HQL
-		return HibernateUtil.getSession().createQuery("from Account", Account.class).list();
+		
+		Session ses = HibernateUtil.getSession();
+		
+		List<Account> accounts = ses.createQuery("from Account", Account.class).list();
+		
+		return accounts;
 	}
 
 	@Override
@@ -68,6 +77,7 @@ public class AccountDaoHibernate implements AccountDao{
 		ses.delete(a);
 		
 		transaction.commit();
+
 		return true;
 	}
 

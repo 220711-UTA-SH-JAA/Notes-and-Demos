@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import com.example.models.Transaction;
 import com.example.utils.HibernateUtil;
@@ -30,6 +31,7 @@ public class TransactionDaoHibernate implements TransactionDao{
 		ses.save(t);
 		
 		transaction.commit();
+		
 	}
 
 	@Override
@@ -48,7 +50,21 @@ public class TransactionDaoHibernate implements TransactionDao{
 	@Override
 	public List<Transaction> readAllTransactions() {
 		// TODO Auto-generated method stub
-		return HibernateUtil.getSession().createQuery("from Transaction", Transaction.class).list();
+		Session ses = HibernateUtil.getSession();
+		
+		List<Transaction> transactions = ses.getSession().createQuery("from Transaction", Transaction.class).list();
+		
+		return transactions;
+	}
+
+	@Override
+	public List<Transaction> readTransactionByUser(int id) {
+		//To use the named query, we must get the session, then we call the named query from there
+		
+		Query q = HibernateUtil.getSession().createNamedQuery("getUsersTransactions");
+		q.setParameter("id", id);
+		
+		return q.list();
 	}
 
 }

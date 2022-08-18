@@ -105,7 +105,15 @@ public class Transaction {
 
 	@Override
 	public String toString() {
+		
+		String fromAcc = null;
+		
+		if(from != null) {
+			fromAcc = "" + from.getAccountId();
+		}
+		
+		
 		return "Transaction [transactionId=" + transactionId + ", type=" + type + ", amount=" + amount + ", to=" + to.getAccountId()
-				+ ", from=" + from + "]";
+		+ ", from=" + fromAcc + "]";
 	}
 }

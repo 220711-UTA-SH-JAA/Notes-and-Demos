@@ -17,13 +17,14 @@ public class HibernateUtil {
 	 * 		- .update(), .merge()
 	 * 		- .delete()
 	 */
-	private static Session ses;
 	
-	private static SessionFactory sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+	private static SessionFactory sf = null;
+	private static Session ses = null;
+	
 	
 	public static Session getSession() {
 		
-		if(ses == null) {
+		if(sf == null) {
 				/*
 				//Configuration class
 				Configuration cfg = new Configuration();
@@ -41,12 +42,23 @@ public class HibernateUtil {
 				ses = sf.openSession();
 				*/
 			
+			try {
+				Class.forName("org.postgresql.Driver");
+				sf =  new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 				ses = sf.openSession();
-
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
-		
-		
+
 		return ses;
+		
+	}
+	
+	public static void closeSession() {
+		ses.close();
 	}
 
 }

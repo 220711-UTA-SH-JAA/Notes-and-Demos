@@ -35,6 +35,7 @@ public class UserDaoHibernate implements UserDao{
 		
 		//Commit the user to the database
 		transaction.commit();
+		
 	}
 
 	@Override
@@ -45,7 +46,9 @@ public class UserDaoHibernate implements UserDao{
 		
 		//User u = ses.createNativeQuery("select * from users where username ='" + username + "'").;
 		
-		User u = ses.createQuery("from User where username=:username", User.class).setString("username", username).uniqueResult();
+		User u = ses.createQuery("from User where username=:username", User.class).setParameter("username", username).uniqueResult();
+		
+		System.out.println("In the dao: " + u);
 		
 		return u;
 	}

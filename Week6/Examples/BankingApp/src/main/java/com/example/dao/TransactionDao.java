@@ -11,5 +11,7 @@ public interface TransactionDao {
 	Transaction readTransactionById(int id);
 	
 	List<Transaction> readAllTransactions();
+	
+	List<Transaction> readTransactionByUser(int id);
 
 }
