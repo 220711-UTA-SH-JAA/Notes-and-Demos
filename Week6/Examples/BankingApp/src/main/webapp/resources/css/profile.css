@@ -1,0 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+
+.profile-content{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-accounts{
+	width: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#account-list{
+	width: 100%;
+}
+
+.account-item{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid black;
+	padding: 25px;
+}

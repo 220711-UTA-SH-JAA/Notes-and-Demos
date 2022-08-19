@@ -28,6 +28,9 @@ public class Dispatcher {
 			case "/BankingApp/api/account":
 				AccountController.doRegisterAccount(req, res);
 				break;
+			case "/BankingApp/api/accounts":
+				AccountController.doGetAccounts(req, res);
+				break;
 			case "/BankingApp/api/deposit":
 				TransactionController.doDeposit(req, res);
 				break;

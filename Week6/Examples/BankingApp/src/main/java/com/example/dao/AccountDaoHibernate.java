@@ -87,7 +87,7 @@ public class AccountDaoHibernate implements AccountDao{
 		//Create an HQL query
 		Session ses = HibernateUtil.getSession();
 		
-		List<Account> userAccounts = ses.createQuery("from Account where accountHolder=:user", Account.class).setParameter("user", u)
+		List<Account> userAccounts = ses.createQuery("from Account a where accountHolder=:user order by a.accountId", Account.class).setParameter("user", u)
 				.list();
 		
 		return userAccounts;

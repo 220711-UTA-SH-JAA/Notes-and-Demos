@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +41,23 @@ public class AccountController {
 		res.setStatus(201);
 		res.getWriter().write(om.writeValueAsString(a));
 		return;
+	}
+	
+	public static void doGetAccounts(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		if(req.getSession().getAttribute("user") == null) {
+			res.setStatus(403);
+			res.getWriter().write("You must be a logged in member to open an account");
+			return;
+		}
+		
+		User u = userService.getUsersProfile((String) req.getSession().getAttribute("user"));
+		
+		List<Account> accounts = accountService.getAccountsByUser(u);
+		
+		res.setStatus(200);
+		res.getWriter().write(om.writeValueAsString(accounts));
+		return;
+		
 	}
 
 }

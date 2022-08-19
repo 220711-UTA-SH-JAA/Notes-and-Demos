@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Revature Bank</title>
+		<link rel="stylesheet" href="../css/profile.css" />
+	</head>
+	<body>
+		<div class="profile-content">
+			<h1 id="profile-welcome"></h1>
+			<div class="new-account">
+				<h3>Open a new account with us today</h3>
+				<div class="account-input">
+					<select id="account-type" value="CHECKING">
+						<option value="CHECKING">CHECKING</value>
+						<option value="SAVING">SAVING</value>
+					</select>
+					<button id="new-account-btn">Submit new Account Order</button>
+				</div>
+				<button id="show-transaction">Make Bank Transaction</button>
+				<div id="transaction-options" hidden=true>
+					<div class="transaction-input">
+						<h3>Select the type of transaction</h3>
+						<select id="transaction-type" value="DEPOSIT">
+							<option value="DEPOSIT">DEPOSIT</option>
+							<option value="WITHDRAW">WITHDRAW</option>
+							<option value="TRANSFER">TRANSFER</option>
+						</select>
+					</div>
+					<div class="transaction-input">
+						<h3>Input the primary account in this transaction</h3>
+						<input type="number" id="to-account" />
+					</div>
+					<div id="transfer-account">
+						<h3>Input the account you are transferring from</h3>
+						<p>Leave empty, if DEPOSIT or WITHDRAW</p>
+						<input type="number" id="from-account" />
+					</div>
+					<div class="transaction-input">
+						<h3>Input the amount of money you would like to include</h3>
+						<input type="number" id="amount" step="0.01"/>
+					</div>
+					<button id="transaction-btn">Send Money</button>
+				</div>
+			</div>
+			<div class="profile-accounts">
+				<h1>Accounts</h1>
+				<div id="account-list"></div>
+			</div>
+		</div>
+		<script src="../js/profile.js"></script>
+	</body>
+</html>
