@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.models.Employee;
 
-@Repository("EmployeeDaoBean")
 public class EmployeeDaoMock implements EmployeeDao{
 
 	@Override
@@ -22,6 +21,24 @@ public class EmployeeDaoMock implements EmployeeDao{
 		employees.add(new Employee(3, "Ethan", "McGill", "em", "password", true, new HashSet<>()));
 		
 		return employees;
+	}
+
+	@Override
+	public void createEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
