@@ -89,3 +89,45 @@ P2 Work
 ### 18. What are the different types of advice?
 
 ### 19. How do you create a pointcut?
+
+## Day 3:
+
+### Activities:
+
+QC/P2 Work
+
+### Questions:
+
+### 1. What is Lombok
+
+### 2. What is Spring Boot?
+
+### 3. Why use Spring Boot?
+
+### 4. What are some features of Spring Boot?
+
+### 5. What is @SpringBootApplication?
+
+### 6. What is Spring Boot DevTools?
+
+### 7. What is Spring Data?
+
+### 8. What are some benefits of Spring Data?
+
+### 9. What are some features of Spring Data?
+
+### 10. How do you use Spring Data's built in methods?
+
+### 11. How do you create create custom queries with Spring Data?
+
+### 12. What annotations come with Spring Data?
+
+### 13. What is @Transactional?
+
+### 14. What are the @Transactional Attributes?
+
+### 15. What are the Transaction Propagation Strategies available?
+
+### 16. What is Spring Validator?
+
+### 17. How do you use Spring Validator?
