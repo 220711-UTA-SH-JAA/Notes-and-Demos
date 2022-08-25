@@ -128,6 +128,24 @@ QC/P2 Work
 
 ### 15. What are the Transaction Propagation Strategies available?
 
-### 16. What is Spring Validator?
+## Day 4
 
-### 17. How do you use Spring Validator?
+## Actvities:
+
+Project 2 Work
+
+## Questions:
+
+### 1. What is Spring Validator?
+
+### 2. How do you use Spring Validator?
+
+### 3. What is Lombok?
+
+### 4. What is Spring boot actuator?
+
+### 5. What are Spring Boot Profiles?
+
+### 6. How can you make API calls with Spring Boot?
+
+
