@@ -1,0 +1,44 @@
+package com.example.strings;
+
+public class StringExamples {
+	
+	/*
+	 * In Java Strings are an object derived from the String class
+	 * 
+	 * String stores a sequence of characters as its state
+	 * - You cannot change/modify the state/content of a string once it is set, this means that it is immutable
+	 * - If you want to change the value of a string, you must create it completely with the new data
+	 * 
+	 * String have many methods, that help us out in finding out info about the string/working on the string
+	 * - The String methods WILL NOT actually modify the String, they will return a NEW STRING
+	 * - charAt(index)
+	 * - concat(String str)
+	 * - indexOf(char ch)
+	 * - length()
+	 * - subString(int start, int end)
+	 * - contains(String str)
+	 * 
+	 */
+	
+	//If String are immutable how do we actually concatenate
+	
+	public static void main(String args[]) {
+		
+		
+		//Strings created with double quotes are called string literals
+		String str1 = "Hello";
+		
+		//Some ways to add/append to a string
+		str1 = str1 + " world";
+		
+		//Concat method, but you must assign to itself/another string
+		str1.concat(" I are programmer");
+		
+		str1 = str1.concat(" I are programmer");
+		
+		System.out.println(str1);
+		
+	}
+	
+
+}

@@ -1,0 +1,54 @@
+package com.example.strings;
+
+public class StringExamples {
+	
+	/*
+	 * In Java Strings are an object derived from the String class
+	 * 
+	 * String stores a sequence of characters as its state
+	 * - You cannot change/modify the state/content of a string once it is set, this means that it is immutable
+	 * - If you want to change the value of a string, you must create it completely with the new data
+	 * 
+	 * String have many methods, that help us out in finding out info about the string/working on the string
+	 * - The String methods WILL NOT actually modify the String, they will return a NEW STRING
+	 * - charAt(index)
+	 * - concat(String str)
+	 * - indexOf(char ch)
+	 * - length()
+	 * - subString(int start, int end)
+	 * - contains(String str)
+	 * 
+	 * Strings a so special that they get their own special space in the program memory
+	 * - They so they used so often, we store them somewhere that will prevent duplicates to memory
+	 * 
+	 * This place is called the String pool
+	 * - There are no duplicates
+	 * - Any string literal that does exist in the string pool already will be placed there
+	 * - And string literal that already exists, will point to the string in the string pool
+	 * 
+	 */
+	
+	public static void main(String args[]) {
+		
+		//If String are immutable how do we actually concatenate
+		
+		//Strings created with double quotes are called string literals
+		String str1 = "Hello";
+		
+		//Some ways to add/append to a string
+		str1 = str1 + " world";
+		
+		//Concat method, but you must assign to itself/another string
+		str1.concat(" I are programmer");
+		
+		str1 = str1.concat(" I are programmer");
+		
+		// The == sign is going to check if the memory addresses of the object are the same, not if the value is the same
+		
+		
+		System.out.println(str1);
+		
+	}
+	
+
+}

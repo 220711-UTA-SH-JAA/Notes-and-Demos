@@ -9,20 +9,27 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.exceptions.ListDoesNotExistException;
 import com.example.models.GroceryList;
 import com.example.models.Item;
+import com.example.models.User;
 import com.example.repository.GroceryListRepository;
+import com.example.repository.UserRepository;
 
 @Service
 @Transactional
 public class GroceryListService {
 	
 	private GroceryListRepository glRepo;
+	private UserRepository userRepo;
 	
 	@Autowired
-	public GroceryListService(GroceryListRepository glRepo) {
+	public GroceryListService(GroceryListRepository glRepo, UserRepository userRepo) {
 		this.glRepo = glRepo;
+		this.userRepo = userRepo;
 	}
 	
 	public GroceryList createList(GroceryList gl) {
+		
+		User u = userRepo.findById(gl.getUser().getUserId()).get();
+		gl.setUser(u);
 		glRepo.save(gl);
 		return glRepo.getByListName(gl.getListName()).get();
 	}

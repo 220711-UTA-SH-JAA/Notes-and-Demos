@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ import com.example.validation.UserValidation;
 @RestController()
 //Map our UserController requests to http://localhost:PORT/users
 @RequestMapping("/users")
+@CrossOrigin("*")
 public class UserController {
 	
 	//We need to autowire our Service
@@ -32,7 +34,9 @@ public class UserController {
 	//To use the validator, we must have an object binder inside of our controller, so lets set that up
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(new UserValidation());
+        if (User.class.isAssignableFrom(binder.getTarget().getClass())) {
+            binder.addValidators(new UserValidation());
+        }
 	}
 	
 	@Autowired

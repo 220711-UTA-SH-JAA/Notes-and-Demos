@@ -1,0 +1,27 @@
+package com.example;
+
+public class Driver {
+	
+	public static void main(String args[]) {
+		
+	}
+	
+
+}
+
+class Person {
+	
+	int age;
+	
+	String name;
+	
+	Person(int age, String name){
+		this.age = age;
+		this.name =name;
+	}
+	
+	void sayHello() {
+		System.out.println("Hello");
+	}
+	
+}

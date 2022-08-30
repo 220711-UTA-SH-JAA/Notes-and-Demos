@@ -1,0 +1,27 @@
+package com.example.scopes;
+
+public class ScopesExample {
+	
+	/*
+	 * In have 4 different scopes for varaibles
+	 * 	- Each scope determines how long a variable is alive/available, and where the variable is available from
+	 * 
+	 * Instance Scope
+	 * - Belongs to the object
+	 * - Each individual object derived from a class could have a different value for this variable
+	 * - While the object exists in memory, instance scope variables are available to the program
+	 * 
+	 * Static Scope
+	 * - Belongs to the class itself
+	 * - If change the value in one object instance of the class, it will change across all object instances of the class
+	 * - While this scope is sort of special, it exists for the same amount of time as the instance scope
+	 * 
+	 */
+	
+	//Instance scope, because every instance of this class, could store a different value for age
+	int age;
+	
+	//Static scope, becasue it has the static keyword, every instance of this class will share this same value
+	String species = "human";
+
+}

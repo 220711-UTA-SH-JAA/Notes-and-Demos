@@ -3,6 +3,7 @@ package com.example.controllers;
 import java.util.LinkedHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.models.GroceryList;
 import com.example.models.Item;
+import com.example.models.User;
 import com.example.services.GroceryListService;
 import com.example.services.ItemService;
 
 @RestController
 @RequestMapping("/list")
+@CrossOrigin("*")
 public class GroceryListController {
 	
 	private GroceryListService glService;
@@ -29,7 +32,14 @@ public class GroceryListController {
 	}
 	
 	@PostMapping("/create")
-	public GroceryList createList(@RequestBody GroceryList list) {
+	public GroceryList createList(@RequestBody LinkedHashMap<String, String> body) {
+		
+		GroceryList list = new GroceryList();
+		User u = new User();
+		u.setUserId(Integer.parseInt(body.get("userId")));
+		list.setUser(u);
+		list.setListName(body.get("name"));
+		
 		return glService.createList(list);
 	}
 	

@@ -1,0 +1,25 @@
+<configuration>
+	<!-- Describes how our logger should print to the console -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- Describes how our logger should append to a file -->
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>bank.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	
+	<!-- Now we can set the logging threshold -->
+	<root level="debug">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE" />
+	</root>
+	
+	<logger name="org.hibernate" level="INFO"/>
+</configuration>

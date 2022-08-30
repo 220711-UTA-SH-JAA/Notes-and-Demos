@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- Inside of the beans tag is where we will configure what classes we want spring to manage, and where they should be
+		injected
+	 -->
+	 
+	 <!-- The first Bean we want to make is the EmployeeDao -->
+	<!-- <bean name="EmployeeDaoBean" scope="singleton" class="com.example.dao.EmployeeDaoMock"/>  -->
+	
+	<!-- Constructor Injection, we need the dependency managed through a constructor for our EmployeeService -->
+	<!-- <bean name="EmployeeServiceBean" scope="singleton" class="com.example.services.EmployeeService">
+		<constructor-arg index="0" ref="EmployeeDaoBean"/>
+	</bean>
+	-->
+
+	<!-- Setter injection 
+	<bean name="TicketDaoBean" class="com.example.dao.TicketDaoMock"/>
+	-->
+	
+	<!-- Create the bean for the service and inject via setters 
+	<bean name="TicketServiceBean" class="com.example.services.TicketService">
+		<property name="tDao" ref="TicketDaoBean"></property>
+	</bean>
+	-->
+	
+	<!-- The final way we can implement dependency injection is with autowiring and component scan, and annotations
+		Annotations that we can use:
+		- @Autowired: be used to inject bean dependencies as needed
+		- @Bean used inside of classed to declare an object as a bean
+		- @Component: used to mark a class as a spring bean (you will need to enable component scanning
+		- @ComponentScan: class based configuration setting
+		- @Configuration: used above a class which you are using to configure spring, typically this is where you will use @Bean
+		- @Inject: standard Java annotation used to inject dependencies
+		
+		We also have stereotype annotations, which are builtin annotations in Spring which are used as markers to declare objects
+		as beans, they also define what the object is used for
+		
+		@Component: the most generic marker
+		@Repository: used to mark a class which will be used to store data
+		@Service: used to mark a class used as a service
+		@Controller: used to mark a class used as a controller in Spring MVC
+	-->
+	
+	<!-- First thing we have to do to autowire is setup the annotation configuration, this will tell spring to look for annotations
+	in the application -->
+	<context:annotation-config/>
+	
+	<!-- We want to scan our application for component annotations, and make beans based off that, and autowire based on those beans -->
+	<context:component-scan base-package="com.example"/>
+	
+    <!-- Turn on aspect annotations, specifically AspectJ -->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<!-- Tell spring-orm that we will be using the spring orm annotations -->
+	<tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager"/>
+        
+    <!-- MVC annotations -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- Setup the database connection information -->
+	<!-- Datasource bean, this bean will be a JDBC instance, it is the object that holds all the attributes needed to connect
+		to the db
+	 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- Needs properties for each of our db connection details -->
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+		<property name="url" value="jdbc:postgresql://em-220711-jaa.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/ers_db"></property>
+		<property name="username" value="dbuser"></property>
+		<property name="password" value="password"></property>
+	</bean>
+	
+	<!-- As we saw last week, we need a sessionFactory for hibernate to create sessions -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="packagesToScan" value="com.example.models"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Finally, we need to tell spring how to manage our transactions with a transaction manager -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>

@@ -7,34 +7,26 @@
 ### Team 1: 
 
 1. Matt Myers
-2. Pablo Hernandez
-3. JD Megargel
-4. Ryan Ducolon
-5. Edwin Suarez
+2. JD Megargel
+3. Kemberly Montina
 
 ### Team 2:
 
 1. Gordon Ramsbottom
-2. Kemberly Montina
 3. James Walker
 4. Patrick Nelson
-5. Daniel Case
 
 ### Team 3:
 
 1. Tazrian Halim
 2. Hector Rios
-3. Johannes Danusoantoso
-4. Victor Lin
-5. Gela Kuchaidze
+3. Daniel Case
 
 ### Team 4:
 
 1. Larry Ziegenbein
-2. Erika Whitney
 3. Edwin Samaniego
 4. Jaylen Byrd
-5. Kevin Solis
 
 ## Project Technology:
 

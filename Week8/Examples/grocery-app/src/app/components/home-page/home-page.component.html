@@ -1,0 +1,12 @@
+<div class="home-page">
+    <!--Lets use the username variable from the component-->
+    <h2>{{username}}'s GroceryLists</h2>
+    <div class="grocery-list">
+       <!--We use property binding to pass the item data along to the item component--> 
+       <item [item]="items[0]"></item>
+       <item [item]="items[1]"></item>
+       <item [item]="items[2]"></item>
+       <item [item]="items[3]"></item>
+       <item [item]="items[4]"></item>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+package com.example.strings;
+
+public class StringExamples {
+	
+	/*
+	 * In Java Strings are an object derived from the String class
+	 * 
+	 * String stores a sequence of characters as its state
+	 * - You cannot change/modify the state/content of a string once it is set, this means that it is immutable
+	 * - If you want to change the value of a string, you must create it completely with the new data
+	 * 
+	 * 
+	 * 
+	 */
+	
+
+}

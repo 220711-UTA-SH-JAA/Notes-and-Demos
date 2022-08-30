@@ -1,0 +1,14 @@
+package com.example.scopes;
+
+public class ScopesExample {
+	
+	/*
+	 * In have 4 different scopes for varaibles
+	 * 	- Each scope determines how long a variable is alive/available, and where the variable is available from
+	 * 
+	 * 
+	 * 
+	 */
+	
+
+}

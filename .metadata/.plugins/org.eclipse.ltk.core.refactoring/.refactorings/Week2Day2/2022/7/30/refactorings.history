@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.example.gc.GarbageCollections&apos; to &apos;GarbageCollection&apos;&#x0D;&#x0A;- Original project: &apos;Week2Day2&apos;&#x0D;&#x0A;- Original element: &apos;com.example.gc.GarbageCollections&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.gc.GarbageCollection&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GarbageCollections&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.example.gc{GarbageCollections.java[GarbageCollections" matchStrategy="1" name="GarbageCollection" qualified="false" references="true" similarDeclarations="false" stamp="1658176576936" textual="false" version="1.0"/>
+</session>

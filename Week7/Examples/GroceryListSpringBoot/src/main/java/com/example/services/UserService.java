@@ -78,6 +78,7 @@ public class UserService {
 		User u = userRepo.getByUsername(username).orElseThrow(InvalidCredentialsException::new);
 		
 		if(u.getPassword().equals(password)) {
+			System.out.println(u.getLists());
 			return u;
 		}
 		

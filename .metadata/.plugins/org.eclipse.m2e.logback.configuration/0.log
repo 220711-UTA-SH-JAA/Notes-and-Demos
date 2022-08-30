@@ -1,0 +1,27 @@
+2021-02-17 14:01:49,963 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-07-18 16:35:21,953 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.revature.eval.java:core:1.0 @ C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\pom.xml.
+2022-07-18 16:35:22,144 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:35:22,145 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:35:22,146 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:35:22,146 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
+2022-07-18 16:35:22,477 [Worker-21: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.revature.eval.java:core:1.0 @ C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\pom.xml.
+2022-07-18 16:35:23,366 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:35:23,366 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:35:23,367 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:35:23,368 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
+2022-07-18 16:36:32,157 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:36:32,158 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:36:32,158 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:36:32,159 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
+2022-07-18 16:48:03,248 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:03,249 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:48:03,249 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:03,250 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
+2022-07-18 16:48:22,826 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:22,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:48:22,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:22,827 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
+2022-07-18 16:48:27,320 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:27,320 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\main\resources
+2022-07-18 16:48:27,321 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 16:48:27,321 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Desktop\220711-JAA\Notes-and-Demos\java-core\src\test\resources
