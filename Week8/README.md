@@ -103,3 +103,29 @@ Project 2 Work
 ### 22. What is databinding in Angular?
 
 ### 23. What are the ways in which we can perform one way data binding?
+
+## Day 3.
+
+### Activities:
+
+P2 Work
+
+### Questions
+
+### 1. What is two way data binding?
+
+### 2. How is two way data binding achieved?
+
+### 3. What is a popular use of two way data binding?
+
+### 4. What are event emitters?
+
+### 5. How do you use event emitters?
+
+### 6. What are structural directives?
+
+### 7. What are some different structural directives?
+
+### 8. What are attribute directives?
+
+### 9. What are some different attribute directives?
