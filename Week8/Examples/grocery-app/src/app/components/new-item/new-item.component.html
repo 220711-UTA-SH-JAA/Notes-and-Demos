@@ -1,0 +1,17 @@
+<div class="new-item">
+    <h2 *ngIf="error; else elseBlock">Please input both values</h2>
+    <ng-template #elseBlock>
+        <h2>Input a new item</h2>
+    </ng-template>
+    <h3>Item Name</h3>
+    <!-- Two way data binding uses both property and event binding, and typically the ngModel
+        from forms
+    -->
+    <!-- ngClass directive lets us set a class based on an expression-->
+    <input [(ngModel)] = "itemName" [ngClass]="error ? 'invalid' : 'valid'">
+    <p>{{itemName}}</p>
+    <h3>Item Price</h3>
+    <input type="number" step="0.01" [(ngModel)]="itemPrice" [ngClass]="error ? 'invalid' : 'valid'"/>
+    <p>${{itemPrice}}</p>
+    <button (click)="submitItem()">Add Item</button>
+</div>

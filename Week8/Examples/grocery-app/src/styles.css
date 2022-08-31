@@ -17,3 +17,7 @@ home{
     justify-content: center;
     align-items: center;
 }
+
+grocery-list {
+    width:100%;
+}

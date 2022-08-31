@@ -1,0 +1,21 @@
+.new-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+.invalid{
+    border: 2px solid red;
+}
+
+.valid{
+    border: 2px solid gray;
+}
