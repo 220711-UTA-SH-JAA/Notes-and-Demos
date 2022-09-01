@@ -129,3 +129,45 @@ P2 Work
 ### 8. What are attribute directives?
 
 ### 9. What are some different attribute directives?
+
+## Day 4.
+
+### Activities:
+
+P2
+
+### Questions:
+
+### 1. What is routing in a SPA?
+
+### 2. How do you setup routing in Angular?
+
+### 3. What are services?
+
+### 4. Why do we use services in Angular?
+
+### 5. How do we inject services into Angular components?
+
+### 6. How do you create a service in Angular?
+
+### 7. What is the pub/sub design pattern?
+
+### 8. What is HttpClient?
+
+### 9. How and where do you use the HttpClient?
+
+### 10. How do you handle errors with HttpClient?
+
+### 11. What are Observables?
+
+### 12. How do you use an Observable?
+
+### 13. What is the difference between an Observable and a Promise?
+
+### 14. What are Subjects?
+
+### 15. What are the different types of subjects?
+
+### 16. What are pipes in Angular?
+
+### 17. What are some different built in pipes?
