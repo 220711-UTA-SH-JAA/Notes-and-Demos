@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {Item} from '../../interfaces/Item';
 import {ITEMS} from "../../data/MockItems";
 import { GroceryList } from 'src/app/interfaces/GroceryList';
+import { GrocerylistService } from 'src/app/services/grocerylist.service';
 
 @Component({
   selector: 'grocery-list',
@@ -16,14 +17,13 @@ export class GroceryListComponent implements OnInit {
     items: []
   }
 
-  constructor() { }
+  constructor(private groceryListService:GrocerylistService) { }
 
   ngOnInit(): void {
   }
 
   addItem(item:Item):void{
-    this.list.items.push(item);
-    console.log(this.list.items);
+    this.groceryListService.addItem(this.list.listName, item.itemName);
   }
 
 }

@@ -134,6 +134,20 @@ P2 Work
 
 ### Activities:
 
+### Angular Hands on:
+
+Create an angular application which displays a random useless fact
+- The application must make use of:
+    - Multiple components
+    - A service
+    - HttpClient and Observables
+    - Make calls to the Random Useless Facts API
+        - https://uselessfacts.jsph.pl/
+
+- When the application loads, display the random fact of the day
+- Create a button which can then load a random fact, replacing the fact of the day
+- You should be able to retrieve a new random fact as many times as you like
+
 P2
 
 ### Questions:
