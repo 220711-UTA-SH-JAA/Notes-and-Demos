@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Item} from '../../interfaces/Item';
 import {ITEMS} from "../../data/MockItems";
+import { GroceryList } from 'src/app/interfaces/GroceryList';
 
 @Component({
   selector: 'grocery-list',
@@ -9,7 +10,11 @@ import {ITEMS} from "../../data/MockItems";
 })
 export class GroceryListComponent implements OnInit {
 
-  items:Item[] = ITEMS;
+  @Input() list:GroceryList = {
+    listId: 0,
+    listName: '',
+    items: []
+  }
 
   constructor() { }
 
@@ -17,8 +22,8 @@ export class GroceryListComponent implements OnInit {
   }
 
   addItem(item:Item):void{
-    this.items.push(item);
-    console.log(this.items);
+    this.list.items.push(item);
+    console.log(this.list.items);
   }
 
 }

@@ -3,8 +3,9 @@
     <!-- onAddItem is our custom event that we setup
         We are telling angular, when that event is fired, called the addItem method inside
         of grocerylist, then that will append an item to the list -->
+    <h1>{{list.listName}}</h1>
     <new-item (onAddItem)="addItem($event)"></new-item>
     <!-- Instead of having all of these hard coded items, we can use ngFor to loop through
         our list and display each one-->
-    <item *ngFor="let item of items" [item]="item"></item>
+    <item *ngFor="let item of list.items" [item]="item"></item>
 </div>

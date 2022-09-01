@@ -1,5 +1,7 @@
 <div class="home-page">
     <!--Lets use the username variable from the component-->
-    <h2>{{username}}'s GroceryLists</h2>
-    <grocery-list></grocery-list>
+    <h2>{{user.firstName}}'s GroceryLists</h2>
+    <div class="list-container">
+        <grocery-list *ngFor="let list of (lists | async)" [list]="list"></grocery-list>
+    </div>
 </div>

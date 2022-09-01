@@ -1,0 +1,28 @@
+<h2>Login to continue</h2>
+<form (submit)="login()" id="login" class="login-form">
+    <div class="input-div">
+        <h3 class="login-label">Username: </h3>
+        <input 
+            class="login-input"
+            type="text"
+            name="username"
+            maxlegth="50"
+            required
+            [(ngModel)]="username"
+        />
+    </div>
+    <div class="input-div">
+        <h3 class="login-label">Password: </h3>
+        <input 
+            class="login-input"
+            type="password"
+            name="password"
+            minlegth="8"
+            required
+            [(ngModel)]="password"
+        />
+    </div>
+    <div class="input-div">
+        <input type="submit" value="Login" class="login-btn"/>
+    </div>
+</form>
