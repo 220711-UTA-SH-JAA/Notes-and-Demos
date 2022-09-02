@@ -185,3 +185,23 @@ P2
 ### 16. What are pipes in Angular?
 
 ### 17. What are some different built in pipes?
+
+## Day 5.
+
+### Activities:
+
+P2 Debug Sessions
+
+### Questions:
+
+### 1. What does Angular use to test?
+
+### 2. What is Jasmine?
+
+### 3. What is Karma?
+
+### 4. Where do you write Angular tests?
+
+### 5. How do you write Angular tests?
+
+### 6. How do you run Angular tests?
