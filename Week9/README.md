@@ -83,3 +83,53 @@
 ### 22. What does Sonar Cloud help with?
 
 ### 23. What is SonarLint?
+
+## Day 3.
+
+### Activities:
+
+The final p2 grind
+
+### Questions
+
+### 1. What is a VM?
+
+### 2. What is a container?
+
+### 3. What is the difference betweent the two?
+
+### 4. What are Pros and cons of a VM?
+
+### 5. What are pros and cons of a container?
+
+### 6. What is containerization?
+
+### 7. What is docker?
+
+### 8. Explain the docker architecture?
+
+### 9. What is the Docker daemon?
+
+### 10. What is the DockerHub Registry?
+
+### 11. What are the main building blocks of docker?
+
+### 12. What are these building blocks managed by?
+
+### 13. What is a docker image?
+
+### 14. What is a docker container?
+
+### 15. What is a docker file?
+
+### 16. How do you create a docker file?
+
+### 17. What are some docker file keywords?
+
+### 18. How can you build an image?
+
+### 19. How can you create a container?
+
+### 20. What are some commands to manage containers?
+
+### 21. What are some docker best practices?
