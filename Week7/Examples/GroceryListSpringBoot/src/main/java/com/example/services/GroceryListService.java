@@ -51,9 +51,9 @@ public class GroceryListService {
 	public GroceryList removeItem(Item i, String listName) {
 		GroceryList gl = glRepo.getByListName(listName).orElseThrow(ListDoesNotExistException::new);
 		
-		List<Item> items = gl.getItems().stream().filter(item -> !item.getItemName().equals(i.getItemName())).toList();
+		//List<Item> items = gl.getItems().stream().filter(item -> !item.getItemName().equals(i.getItemName())).toList();
 		
-		gl.setItems(items);
+		//gl.setItems(items);
 		
 		return gl;
 	}
