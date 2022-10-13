@@ -1,0 +1,23 @@
+server:
+  port: 8000
+  
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      default-filters:
+      - PrefixPath=/
+      routes:
+      - id: employee
+        uri: lb://employee
+        predicates:
+        - Path=/employee/**
+        filters:
+        - StripPrefix=1
+      - id: reimbursement
+        uri: lb://reimbursement
+        predicates:
+        - Path=/reimbursement/**
+        filters:
+        - StripPrefix=1

@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: employee
+  datasource:
+    password: password
+    url: jdbc:h2:file:E:/Documents/Revtature/Batches/220711-JAA/Notes-and-Demos/'MSA
+      Notes'/EmployeeService/src/main/resources/data/employees
+    username: employee
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false

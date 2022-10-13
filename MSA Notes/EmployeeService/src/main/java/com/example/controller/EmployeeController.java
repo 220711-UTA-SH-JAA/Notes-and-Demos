@@ -17,7 +17,6 @@ import com.example.services.EmployeeService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/employee")
 public class EmployeeController {
 	
 	private EmployeeService eServ;

@@ -6,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class ReimbursementServiceApplication {
+public class GatewayServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ReimbursementServiceApplication.class, args);
+		SpringApplication.run(GatewayServiceApplication.class, args);
 	}
 
 }
